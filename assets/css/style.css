@@ -1,0 +1,165 @@
+:root{
+  --bg:#0c0906;--bg2:#15100b;--text:#fff7ea;--muted:#cbbca6;--gold:#d79b45;--gold2:#ffcf86;--line:rgba(255,255,255,.12);--card:rgba(255,255,255,.06);
+}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,system-ui,sans-serif;overflow-x:hidden}a{color:inherit;text-decoration:none}img{max-width:100%;display:block}.container{width:min(1160px,calc(100% - 40px));margin:auto}.site-header{position:fixed;top:16px;left:50%;transform:translateX(-50%);width:min(1160px,calc(100% - 32px));height:72px;display:flex;align-items:center;justify-content:space-between;padding:0 18px 0 24px;border:1px solid var(--line);border-radius:999px;background:rgba(12,9,6,.62);backdrop-filter:blur(18px);z-index:50}.logo{font-family:'Playfair Display',serif;font-size:30px;font-weight:800;letter-spacing:-.04em}.logo span{color:var(--gold)}.nav{display:flex;gap:22px;align-items:center;font-weight:700;font-size:14px;color:rgba(255,247,234,.86)}.nav a:hover{color:#fff}.nav-cta{padding:12px 18px;border-radius:999px;background:linear-gradient(135deg,var(--gold),var(--gold2));color:#1a0d03!important}.menu-toggle{display:none;background:none;border:0;color:#fff;font-size:28px}.hero{position:relative;min-height:100vh;display:grid;place-items:center;overflow:hidden}.hero-bg{position:absolute;inset:0;background:url('../img/hero-restoran.avif') center/cover no-repeat;transform:scale(1.06)}.hero-overlay{position:absolute;inset:0;background:radial-gradient(circle at 35% 45%,rgba(0,0,0,.1),rgba(0,0,0,.78) 60%,#0c0906 100%),linear-gradient(90deg,rgba(0,0,0,.72),transparent)}.hero-content{position:relative;z-index:2;width:min(760px,calc(100% - 40px));margin-right:auto;margin-left:clamp(20px,8vw,120px);padding-top:80px}.eyebrow{text-transform:uppercase;letter-spacing:.18em;font-size:12px;font-weight:800;color:var(--gold2);margin:0 0 14px}.hero h1,.page-hero h1,h2{font-family:'Playfair Display',serif;line-height:.95;letter-spacing:-.05em;margin:0}.hero h1{font-size:clamp(54px,8vw,110px);max-width:850px}.hero p:not(.eyebrow){font-size:clamp(17px,2vw,21px);color:var(--muted);line-height:1.65;max-width:650px}.btn{display:inline-flex;align-items:center;justify-content:center;min-height:52px;padding:0 22px;border-radius:999px;font-weight:800;border:1px solid var(--line);transition:.25s}.btn.primary{background:linear-gradient(135deg,var(--gold),var(--gold2));color:#180d04;border:0}.btn.ghost{background:rgba(255,255,255,.08);color:#fff}.btn:hover{transform:translateY(-2px)}.hero-actions,.panorama-buttons{display:flex;gap:12px;flex-wrap:wrap;margin-top:26px}.section-padding{padding:110px 0}.two-col{display:grid;grid-template-columns:1fr 1.1fr;gap:70px;align-items:start}h2{font-size:clamp(42px,5vw,76px)}.large{font-size:22px;line-height:1.7;color:var(--muted);margin:0}.panorama-section{height:480vh;position:relative}.panorama-sticky{position:sticky;top:0;height:100vh;overflow:hidden;background:#000}.panorama-img{position:absolute;inset:0;background-image:url('../img/panorama-restoran.avif');background-size:auto 112%;background-position:0% center;background-repeat:no-repeat;will-change:background-position,transform;transform:scale(1.04)}.panorama-dark{position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,0,0,.72),rgba(0,0,0,.2) 45%,rgba(0,0,0,.82)),linear-gradient(0deg,rgba(0,0,0,.65),transparent 35%,rgba(0,0,0,.35))}.panorama-copy{position:absolute;left:clamp(22px,8vw,110px);top:50%;transform:translateY(-50%);width:min(520px,calc(100% - 44px));opacity:0;pointer-events:none}.panorama-copy h2{font-size:clamp(42px,6vw,86px);text-shadow:0 18px 70px rgba(0,0,0,.8)}.panorama-copy p:not(.eyebrow){font-size:18px;line-height:1.7;color:#eadbc6}.copy-4{pointer-events:auto}.panorama-progress{position:absolute;left:50%;bottom:34px;transform:translateX(-50%);width:min(520px,calc(100% - 44px));height:4px;background:rgba(255,255,255,.18);border-radius:999px;overflow:hidden}.panorama-progress span{display:block;width:0%;height:100%;background:linear-gradient(90deg,var(--gold),var(--gold2))}.section-head{text-align:center;margin-bottom:42px}.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.card,.menu-box,.contact-card,.form,.map-placeholder{border:1px solid var(--line);background:linear-gradient(180deg,rgba(255,255,255,.08),rgba(255,255,255,.035));border-radius:28px;padding:28px}.card span{color:var(--gold2);font-weight:900}.card h3{font-size:24px;margin:22px 0 10px}.card p,.footer p,.menu-box,.contact-card{color:var(--muted);line-height:1.65}.page-hero{padding:180px 0 80px;background:radial-gradient(circle at 20% 10%,rgba(215,155,69,.22),transparent 35%),var(--bg2)}.page-hero h1{font-size:clamp(56px,8vw,108px)}.page-hero p:not(.eyebrow){font-size:20px;color:var(--muted);max-width:650px}.menu-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}.menu-box h2{font-size:38px;margin-bottom:22px}.menu-item{display:flex;justify-content:space-between;gap:20px;padding:17px 0;border-bottom:1px solid var(--line);font-weight:700;color:#fff}.menu-item b{color:var(--gold2)}.form-wrap{width:min(720px,calc(100% - 40px))}.form{display:grid;gap:16px}.form label{display:grid;gap:8px;color:var(--muted);font-weight:700}.form input,.form select,.form textarea{width:100%;border:1px solid var(--line);background:rgba(0,0,0,.25);color:#fff;border-radius:16px;padding:16px;font:inherit}.form textarea{min-height:130px}
+/* Ispravak za mobile: datum i vrijeme su centrirani u boxu */
+.form label.centered-picker{
+  text-align:center;
+}
+.form label.centered-picker input[type="date"],
+.form label.centered-picker input[type="time"]{
+  min-height:70px;
+  height:70px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  padding:0 18px;
+  line-height:70px;
+  -webkit-appearance:none;
+  appearance:none;
+}
+.form label.centered-picker input[type="date"]::-webkit-date-and-time-value,
+.form label.centered-picker input[type="time"]::-webkit-date-and-time-value{
+  text-align:center;
+  width:100%;
+}
+.form label.centered-picker input[type="date"]::-webkit-calendar-picker-indicator,
+.form label.centered-picker input[type="time"]::-webkit-calendar-picker-indicator{
+  position:absolute;
+  right:18px;
+  opacity:.65;
+  filter:invert(1);
+}
+.form label.centered-picker input[type="date"],
+.form label.centered-picker input[type="time"]{
+  position:relative;
+}
+.contact-grid{display:grid;grid-template-columns:1fr 1.2fr;gap:22px}.map-placeholder{min-height:340px;display:grid;place-items:center;color:var(--muted);background:linear-gradient(135deg,rgba(215,155,69,.12),rgba(255,255,255,.04))}.footer{padding:60px 0;border-top:1px solid var(--line);background:#080604}.footer-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:30px}.reveal{opacity:0;transform:translateY(36px)}
+@media (max-width:900px){.menu-toggle{display:block}.nav{position:absolute;top:86px;left:0;right:0;display:none;flex-direction:column;align-items:stretch;padding:20px;background:rgba(12,9,6,.96);border:1px solid var(--line);border-radius:26px}.nav.open{display:flex}.two-col,.cards,.menu-grid,.contact-grid,.footer-grid{grid-template-columns:1fr}.section-padding{padding:76px 0}.panorama-img{background-size:auto 105%}.panorama-copy{top:auto;bottom:86px;transform:none}.hero-content{margin-left:20px}.site-header{top:10px}.hero h1{font-size:52px}}
+@media (prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}.panorama-copy{opacity:1;position:relative;top:auto;bottom:auto;transform:none;padding:30px}.panorama-section{height:auto}.panorama-sticky{position:relative;height:auto;min-height:100vh}}
+
+/* Online narudžba - izbor jela i količina */
+.order-builder{
+  display:grid;
+  gap:16px;
+  border:1px solid var(--line);
+  background:rgba(0,0,0,.16);
+  border-radius:24px;
+  padding:20px;
+}
+.order-builder-head{
+  display:flex;
+  align-items:flex-end;
+  justify-content:space-between;
+  gap:18px;
+  margin-bottom:4px;
+}
+.order-builder-head h2{
+  font-family:Inter,system-ui,sans-serif;
+  font-size:24px;
+  letter-spacing:-.03em;
+  line-height:1.15;
+  margin:4px 0 0;
+}
+.order-builder-head p{
+  max-width:260px;
+  margin:0;
+  color:var(--muted);
+  line-height:1.5;
+  font-size:14px;
+}
+.small-label{
+  color:var(--gold2);
+  text-transform:uppercase;
+  letter-spacing:.14em;
+  font-size:11px;
+  font-weight:900;
+}
+.order-row{
+  display:grid;
+  grid-template-columns:1fr 120px;
+  gap:12px;
+  align-items:end;
+}
+.order-row select,
+.order-row input[type="number"]{
+  min-height:58px;
+}
+.order-row input[type="number"]{
+  text-align:center;
+  font-weight:800;
+}
+@media (max-width:640px){
+  .order-builder{padding:16px;border-radius:22px}
+  .order-builder-head{display:block}
+  .order-builder-head p{max-width:none;margin-top:8px}
+  .order-row{grid-template-columns:1fr 96px;gap:10px}
+  .order-row select,.order-row input[type="number"]{min-height:56px;padding:13px 12px}
+}
+
+.add-dish-btn{
+  width:max-content;
+  margin-top:4px;
+  cursor:pointer;
+}
+.order-total-box{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:16px;
+  border:1px solid rgba(255,255,255,.12);
+  background:linear-gradient(135deg,rgba(215,155,69,.16),rgba(255,255,255,.04));
+  border-radius:20px;
+  padding:18px 20px;
+  margin-top:4px;
+}
+.order-total-box span{
+  color:var(--muted);
+  font-weight:800;
+}
+.order-total-box strong{
+  color:#fff;
+  font-size:26px;
+  letter-spacing:-.03em;
+}
+@media (max-width:640px){
+  .add-dish-btn{width:100%}
+  .order-total-box{padding:16px;align-items:flex-start;flex-direction:column;gap:6px}
+  .order-total-box strong{font-size:24px}
+}
+
+
+/* Dorada: centriranje polja za vrijeme na stranici online narudžbe */
+.form label.centered-picker{
+  text-align:left;
+}
+.form label.centered-picker input[type="time"]{
+  width:100%;
+  min-height:70px;
+  height:70px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  text-align-last:center;
+  padding:0 18px;
+  line-height:70px;
+  box-sizing:border-box;
+  -webkit-appearance:none;
+  appearance:none;
+}
+.form label.centered-picker input[type="time"]::-webkit-date-and-time-value{
+  width:100%;
+  text-align:center;
+  display:block;
+}
+.form label.centered-picker input[type="time"]::-webkit-calendar-picker-indicator{
+  position:absolute;
+  right:18px;
+  opacity:.65;
+  filter:invert(1);
+}
+.form label.centered-picker input[type="time"]{
+  position:relative;
+}

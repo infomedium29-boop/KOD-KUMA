@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="hr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Online narudžba | Restoran Kod Kuma</title>
+  <meta name="description" content="Naručite roštilj, pizzu, tjesteninu i gotova jela online." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <a class="logo" href="index.html">Kod Kuma<span>.</span></a>
+    <button class="menu-toggle" aria-label="Otvori meni">☰</button>
+    <nav class="nav">
+      <a href="index.html">Početna</a>
+      <a href="jelovnik.html">Jelovnik</a>
+      <a href="o-nama.html">O nama</a>
+      <a href="kontakt.html">Kontakt</a>
+      <a class="nav-cta" href="narudzba.html">Naruči online</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <div class="container">
+        <p class="eyebrow">Online narudžba</p>
+        <h1>Naručite omiljeno jelo.</h1>
+      </div>
+    </section>
+
+    <section class="section-padding">
+      <div class="container form-wrap">
+        <form class="form" action="https://api.web3forms.com/submit" method="POST">
+          <input type="hidden" name="access_key" value="OVDJE_UBACI_WEB3FORMS_ACCESS_KEY">
+          <input type="hidden" name="subject" value="Nova online narudžba - Restoran Kod Kuma">
+          <input type="hidden" name="from_name" value="Restoran Kod Kuma web stranica">
+          <input type="checkbox" name="botcheck" class="hidden" style="display:none;">
+
+          <label>Ime i prezime
+            <input type="text" name="ime_i_prezime" placeholder="Vaše ime" required>
+          </label>
+
+          <label>Telefon
+            <input type="tel" name="telefon" placeholder="+385..." required>
+          </label>
+
+          <label>Način preuzimanja
+            <select name="nacin_preuzimanja" required>
+              <option value="Osobno preuzimanje">Osobno preuzimanje</option>
+              <option value="Dostava">Dostava</option>
+            </select>
+          </label>
+
+          <label>Adresa za dostavu
+            <input type="text" name="adresa" placeholder="Ulica, broj, mjesto">
+          </label>
+
+          <label class="centered-picker">Vrijeme preuzimanja / dostave
+            <input type="time" name="vrijeme" aria-label="Odaberite vrijeme">
+          </label>
+
+          <div class="order-builder">
+            <div class="order-builder-head">
+              <div>
+                <span class="small-label">Vaša narudžba</span>
+                <h2>Odaberite jela i količinu</h2>
+              </div>
+              <p>Odaberite više jela ako gost želi naručiti kompletan obrok.</p>
+            </div>
+
+            <div class="order-row">
+              <label>Jelo
+                <select class="dish-select" name="jelo_1">
+                  <option value="">Odaberite jelo</option>
+                  <optgroup label="Roštilj">
+                    <option value="Grill plata Kod Kuma - 24 €">Grill plata Kod Kuma - 24 €</option>
+                    <option value="Ćevapi u domaćoj lepinji - 10 €">Ćevapi u domaćoj lepinji - 10 €</option>
+                    <option value="Ramstek sa žara - 22 €">Ramstek sa žara - 22 €</option>
+                  </optgroup>
+                  <optgroup label="Pizza">
+                    <option value="Margherita - 9 €">Margherita - 9 €</option>
+                    <option value="Capricciosa - 11 €">Capricciosa - 11 €</option>
+                    <option value="Rustica - 13 €">Rustica - 13 €</option>
+                  </optgroup>
+                  <optgroup label="Tjestenina">
+                    <option value="Carbonara - 12 €">Carbonara - 12 €</option>
+                    <option value="Tagliatelle tartuf - 15 €">Tagliatelle tartuf - 15 €</option>
+                    <option value="Penne piletina - 13 €">Penne piletina - 13 €</option>
+                  </optgroup>
+                  <optgroup label="Gotova jela">
+                    <option value="Dnevni gulaš - 11 €">Dnevni gulaš - 11 €</option>
+                    <option value="Losos s povrćem - 18 €">Losos s povrćem - 18 €</option>
+                    <option value="Piletina u umaku - 14 €">Piletina u umaku - 14 €</option>
+                  </optgroup>
+                </select>
+              </label>
+              <label>Količina
+                <input class="dish-qty" type="number" name="kolicina_1" min="0" max="20" value="0">
+              </label>
+            </div>
+
+            <div class="order-row">
+              <label>Jelo
+                <select class="dish-select" name="jelo_2">
+                  <option value="">Odaberite jelo</option>
+                  <optgroup label="Roštilj">
+                    <option value="Grill plata Kod Kuma - 24 €">Grill plata Kod Kuma - 24 €</option>
+                    <option value="Ćevapi u domaćoj lepinji - 10 €">Ćevapi u domaćoj lepinji - 10 €</option>
+                    <option value="Ramstek sa žara - 22 €">Ramstek sa žara - 22 €</option>
+                  </optgroup>
+                  <optgroup label="Pizza">
+                    <option value="Margherita - 9 €">Margherita - 9 €</option>
+                    <option value="Capricciosa - 11 €">Capricciosa - 11 €</option>
+                    <option value="Rustica - 13 €">Rustica - 13 €</option>
+                  </optgroup>
+                  <optgroup label="Tjestenina">
+                    <option value="Carbonara - 12 €">Carbonara - 12 €</option>
+                    <option value="Tagliatelle tartuf - 15 €">Tagliatelle tartuf - 15 €</option>
+                    <option value="Penne piletina - 13 €">Penne piletina - 13 €</option>
+                  </optgroup>
+                  <optgroup label="Gotova jela">
+                    <option value="Dnevni gulaš - 11 €">Dnevni gulaš - 11 €</option>
+                    <option value="Losos s povrćem - 18 €">Losos s povrćem - 18 €</option>
+                    <option value="Piletina u umaku - 14 €">Piletina u umaku - 14 €</option>
+                  </optgroup>
+                </select>
+              </label>
+              <label>Količina
+                <input class="dish-qty" type="number" name="kolicina_2" min="0" max="20" value="0">
+              </label>
+            </div>
+
+            <div class="order-row">
+              <label>Jelo
+                <select class="dish-select" name="jelo_3">
+                  <option value="">Odaberite jelo</option>
+                  <optgroup label="Roštilj">
+                    <option value="Grill plata Kod Kuma - 24 €">Grill plata Kod Kuma - 24 €</option>
+                    <option value="Ćevapi u domaćoj lepinji - 10 €">Ćevapi u domaćoj lepinji - 10 €</option>
+                    <option value="Ramstek sa žara - 22 €">Ramstek sa žara - 22 €</option>
+                  </optgroup>
+                  <optgroup label="Pizza">
+                    <option value="Margherita - 9 €">Margherita - 9 €</option>
+                    <option value="Capricciosa - 11 €">Capricciosa - 11 €</option>
+                    <option value="Rustica - 13 €">Rustica - 13 €</option>
+                  </optgroup>
+                  <optgroup label="Tjestenina">
+                    <option value="Carbonara - 12 €">Carbonara - 12 €</option>
+                    <option value="Tagliatelle tartuf - 15 €">Tagliatelle tartuf - 15 €</option>
+                    <option value="Penne piletina - 13 €">Penne piletina - 13 €</option>
+                  </optgroup>
+                  <optgroup label="Gotova jela">
+                    <option value="Dnevni gulaš - 11 €">Dnevni gulaš - 11 €</option>
+                    <option value="Losos s povrćem - 18 €">Losos s povrćem - 18 €</option>
+                    <option value="Piletina u umaku - 14 €">Piletina u umaku - 14 €</option>
+                  </optgroup>
+                </select>
+              </label>
+              <label>Količina
+                <input class="dish-qty" type="number" name="kolicina_3" min="0" max="20" value="0">
+              </label>
+            </div>
+
+            <div class="order-row">
+              <label>Jelo
+                <select class="dish-select" name="jelo_4">
+                  <option value="">Odaberite jelo</option>
+                  <optgroup label="Roštilj">
+                    <option value="Grill plata Kod Kuma - 24 €">Grill plata Kod Kuma - 24 €</option>
+                    <option value="Ćevapi u domaćoj lepinji - 10 €">Ćevapi u domaćoj lepinji - 10 €</option>
+                    <option value="Ramstek sa žara - 22 €">Ramstek sa žara - 22 €</option>
+                  </optgroup>
+                  <optgroup label="Pizza">
+                    <option value="Margherita - 9 €">Margherita - 9 €</option>
+                    <option value="Capricciosa - 11 €">Capricciosa - 11 €</option>
+                    <option value="Rustica - 13 €">Rustica - 13 €</option>
+                  </optgroup>
+                  <optgroup label="Tjestenina">
+                    <option value="Carbonara - 12 €">Carbonara - 12 €</option>
+                    <option value="Tagliatelle tartuf - 15 €">Tagliatelle tartuf - 15 €</option>
+                    <option value="Penne piletina - 13 €">Penne piletina - 13 €</option>
+                  </optgroup>
+                  <optgroup label="Gotova jela">
+                    <option value="Dnevni gulaš - 11 €">Dnevni gulaš - 11 €</option>
+                    <option value="Losos s povrćem - 18 €">Losos s povrćem - 18 €</option>
+                    <option value="Piletina u umaku - 14 €">Piletina u umaku - 14 €</option>
+                  </optgroup>
+                </select>
+              </label>
+              <label>Količina
+                <input class="dish-qty" type="number" name="kolicina_4" min="0" max="20" value="0">
+              </label>
+            </div>
+
+            <button class="btn ghost add-dish-btn" type="button" id="add-dish">+ Dodaj jelo</button>
+
+            <div class="order-total-box">
+              <span>Ukupno za platiti</span>
+              <strong id="order-total">0 €</strong>
+            </div>
+
+            <input type="hidden" id="narudzba-summary" name="narudzba" value="">
+            <input type="hidden" id="narudzba-total" name="ukupna_cijena" value="0 €">
+          </div>
+
+          <label>Napomena
+            <textarea name="napomena" placeholder="Posebne želje, alergije, pribor, način plaćanja..."></textarea>
+          </label>
+
+          <button class="btn primary" type="submit">Pošalji narudžbu</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div><a class="logo" href="index.html">Kod Kuma<span>.</span></a><p>Premium restoran s toplim ambijentom.</p></div>
+      <div><h4>Kontakt</h4><p>+385 91 000 0000<br>info@kod-kuma.com</p></div>
+      <div><h4>Radno vrijeme</h4><p>Pon - Ned<br>10:00 - 23:00</p></div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
