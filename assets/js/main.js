@@ -123,3 +123,79 @@ if (orderForm) {
     }
   });
 }
+
+
+// GDPR / Cookie consent
+(function () {
+  const consentKey = 'kodKumaCookieConsent';
+  const consent = localStorage.getItem(consentKey);
+
+  function loadMarketingScripts() {
+    document.querySelectorAll('script[type="text/plain"][data-cookie-category="marketing"]').forEach((oldScript) => {
+      const newScript = document.createElement('script');
+      [...oldScript.attributes].forEach(attr => {
+        if (attr.name !== 'type' && attr.name !== 'data-cookie-category') newScript.setAttribute(attr.name, attr.value);
+      });
+      newScript.text = oldScript.textContent;
+      oldScript.parentNode.replaceChild(newScript, oldScript);
+    });
+  }
+
+  function saveConsent(value) {
+    localStorage.setItem(consentKey, JSON.stringify({
+      necessary: true,
+      analytics: !!value.analytics,
+      marketing: !!value.marketing,
+      savedAt: new Date().toISOString()
+    }));
+    if (value.marketing || value.analytics) loadMarketingScripts();
+    const banner = document.querySelector('.cookie-banner');
+    if (banner) banner.classList.remove('show');
+  }
+
+  function initCookieBanner() {
+    const banner = document.querySelector('.cookie-banner');
+    if (!banner) return;
+
+    const settingsPanel = banner.querySelector('.cookie-panel');
+    const analyticsInput = banner.querySelector('#cookie-analytics');
+    const marketingInput = banner.querySelector('#cookie-marketing');
+
+    banner.querySelector('[data-cookie-accept]')?.addEventListener('click', () => {
+      saveConsent({ analytics: true, marketing: true });
+    });
+
+    banner.querySelector('[data-cookie-reject]')?.addEventListener('click', () => {
+      saveConsent({ analytics: false, marketing: false });
+    });
+
+    banner.querySelector('[data-cookie-settings]')?.addEventListener('click', () => {
+      settingsPanel?.classList.toggle('show');
+    });
+
+    banner.querySelector('[data-cookie-save]')?.addEventListener('click', () => {
+      saveConsent({
+        analytics: analyticsInput?.checked,
+        marketing: marketingInput?.checked
+      });
+    });
+
+    if (!consent) {
+      banner.classList.add('show');
+    } else {
+      try {
+        const saved = JSON.parse(consent);
+        if (saved.analytics || saved.marketing) loadMarketingScripts();
+      } catch (e) {
+        localStorage.removeItem(consentKey);
+        banner.classList.add('show');
+      }
+    }
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initCookieBanner);
+  } else {
+    initCookieBanner();
+  }
+})();
