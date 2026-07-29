@@ -265,3 +265,165 @@
   .cookie-btn{width:100%}
   .cookie-option{align-items:flex-start}
 }
+
+/* Najava otvaranja — početni brendirani modal */
+body.opening-modal-active{
+  overflow:hidden;
+}
+.opening-modal{
+  position:fixed;
+  inset:0;
+  z-index:12000;
+  display:grid;
+  place-items:center;
+  padding:22px;
+  opacity:0;
+  visibility:hidden;
+  transition:opacity .45s ease,visibility .45s ease;
+}
+.opening-modal.is-visible{
+  opacity:1;
+  visibility:visible;
+}
+.opening-modal-backdrop{
+  position:absolute;
+  inset:0;
+  background:
+    radial-gradient(circle at 50% 35%,rgba(215,155,69,.18),transparent 44%),
+    rgba(5,3,2,.88);
+  backdrop-filter:blur(14px);
+  -webkit-backdrop-filter:blur(14px);
+}
+.opening-modal-card{
+  position:relative;
+  width:min(760px,100%);
+  min-height:540px;
+  overflow:hidden;
+  display:grid;
+  place-items:center;
+  text-align:center;
+  border:1px solid rgba(255,207,134,.3);
+  border-radius:34px;
+  background:#0c0906;
+  box-shadow:0 34px 110px rgba(0,0,0,.72);
+  transform:translateY(26px) scale(.97);
+  transition:transform .55s cubic-bezier(.22,1,.36,1);
+}
+.opening-modal.is-visible .opening-modal-card{
+  transform:translateY(0) scale(1);
+}
+.opening-modal-image{
+  position:absolute;
+  inset:0;
+  background:url('../img/hero-restoran.avif') center/cover no-repeat;
+  transform:scale(1.04);
+}
+.opening-modal-shade{
+  position:absolute;
+  inset:0;
+  background:
+    linear-gradient(180deg,rgba(8,5,3,.5),rgba(8,5,3,.9)),
+    radial-gradient(circle at 50% 42%,transparent 0,rgba(8,5,3,.4) 70%);
+}
+.opening-modal-content{
+  position:relative;
+  z-index:2;
+  width:min(610px,calc(100% - 40px));
+  padding:64px 20px 54px;
+}
+.opening-modal-logo{
+  display:inline-block;
+  margin-bottom:34px;
+  font-family:'Playfair Display',serif;
+  font-size:clamp(30px,5vw,42px);
+  font-weight:800;
+  letter-spacing:-.05em;
+}
+.opening-modal-logo span{
+  color:var(--gold);
+}
+.opening-modal-kicker{
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  margin:0 0 18px;
+  color:var(--gold2);
+  font-size:12px;
+  font-weight:900;
+  letter-spacing:.2em;
+  text-transform:uppercase;
+}
+.opening-modal-kicker::before,
+.opening-modal-kicker::after{
+  content:'';
+  width:28px;
+  height:1px;
+  background:linear-gradient(90deg,transparent,var(--gold2));
+}
+.opening-modal-kicker::after{
+  background:linear-gradient(90deg,var(--gold2),transparent);
+}
+.opening-modal h2{
+  margin:0;
+  font-size:clamp(48px,8vw,82px);
+  line-height:.94;
+  text-shadow:0 14px 48px rgba(0,0,0,.5);
+}
+.opening-modal-text{
+  max-width:520px;
+  margin:24px auto 0;
+  color:#e2d3bf;
+  font-size:clamp(16px,2vw,19px);
+  line-height:1.7;
+}
+.opening-modal-btn{
+  margin-top:32px;
+  min-width:245px;
+  cursor:pointer;
+  font:inherit;
+}
+.opening-modal-note{
+  display:block;
+  margin-top:18px;
+  color:rgba(255,247,234,.56);
+  font-size:12px;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+}
+.opening-modal-close{
+  position:absolute;
+  z-index:3;
+  top:18px;
+  right:18px;
+  width:44px;
+  height:44px;
+  display:grid;
+  place-items:center;
+  border:1px solid rgba(255,255,255,.16);
+  border-radius:50%;
+  background:rgba(12,9,6,.48);
+  color:#fff;
+  font-size:24px;
+  line-height:1;
+  cursor:pointer;
+  backdrop-filter:blur(8px);
+  transition:background .25s ease,transform .25s ease;
+}
+.opening-modal-close:hover{
+  background:rgba(215,155,69,.22);
+  transform:rotate(6deg);
+}
+@media (max-width:640px){
+  .opening-modal{padding:12px}
+  .opening-modal-card{min-height:min(680px,calc(100vh - 24px));border-radius:26px}
+  .opening-modal-content{width:calc(100% - 28px);padding:62px 10px 42px}
+  .opening-modal-logo{margin-bottom:36px}
+  .opening-modal h2{font-size:clamp(44px,15vw,68px)}
+  .opening-modal-text{font-size:16px;line-height:1.6}
+  .opening-modal-btn{width:100%;min-width:0}
+  .opening-modal-note{font-size:10px}
+  .opening-modal-close{top:14px;right:14px}
+}
+@media (prefers-reduced-motion:reduce){
+  .opening-modal,.opening-modal-card{transition:none}
+}

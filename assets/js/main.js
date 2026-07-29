@@ -199,3 +199,82 @@ if (orderForm) {
     initCookieBanner();
   }
 })();
+
+// Brendirani modal: najava skorog otvaranja
+(function () {
+  const sessionKey = 'kodKumaOpeningNoticeSeen';
+
+  function hasSeenNotice() {
+    try {
+      return sessionStorage.getItem(sessionKey) === 'true';
+    } catch (error) {
+      return false;
+    }
+  }
+
+  function markNoticeAsSeen() {
+    try {
+      sessionStorage.setItem(sessionKey, 'true');
+    } catch (error) {
+      // Stranica i dalje radi ako preglednik blokira pohranu sesije.
+    }
+  }
+
+  function createOpeningModal() {
+    if (hasSeenNotice()) return;
+
+    const modal = document.createElement('div');
+    modal.className = 'opening-modal';
+    modal.setAttribute('role', 'dialog');
+    modal.setAttribute('aria-modal', 'true');
+    modal.setAttribute('aria-labelledby', 'opening-modal-title');
+    modal.innerHTML = `
+      <div class="opening-modal-backdrop" data-opening-close></div>
+      <div class="opening-modal-card">
+        <div class="opening-modal-image"></div>
+        <div class="opening-modal-shade"></div>
+        <button class="opening-modal-close" type="button" aria-label="Zatvori obavijest" data-opening-close>×</button>
+        <div class="opening-modal-content">
+          <div class="opening-modal-logo">Kod Kuma<span>.</span></div>
+          <p class="opening-modal-kicker">Nešto posebno se priprema</p>
+          <h2 id="opening-modal-title">Uskoro otvaramo vrata.</h2>
+          <p class="opening-modal-text">Još malo strpljenja — pripremamo mjesto ispunjeno dobrim okusima, toplom atmosferom i trenucima za pamćenje.</p>
+          <button class="btn primary opening-modal-btn" type="button" data-opening-close>Pogledaj što pripremamo</button>
+          <span class="opening-modal-note">Vidimo se uskoro u restoranu Kod Kuma</span>
+        </div>
+      </div>`;
+
+    document.body.appendChild(modal);
+    document.body.classList.add('opening-modal-active');
+
+    const closeModal = () => {
+      markNoticeAsSeen();
+      modal.classList.remove('is-visible');
+      document.body.classList.remove('opening-modal-active');
+      window.setTimeout(() => modal.remove(), 500);
+    };
+
+    modal.querySelectorAll('[data-opening-close]').forEach((button) => {
+      button.addEventListener('click', closeModal);
+    });
+
+    document.addEventListener('keydown', function handleEscape(event) {
+      if (event.key === 'Escape') {
+        closeModal();
+        document.removeEventListener('keydown', handleEscape);
+      }
+    });
+
+    window.requestAnimationFrame(() => {
+      window.requestAnimationFrame(() => modal.classList.add('is-visible'));
+    });
+
+    modal.querySelector('.opening-modal-btn')?.focus({ preventScroll: true });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', createOpeningModal);
+  } else {
+    createOpeningModal();
+  }
+})();
