@@ -22,3 +22,5 @@ Napomene:
 
 WEB3FORMS:
 U datoteci narudzba.html zamijeni OVDJE_UBACI_WEB3FORMS_ACCESS_KEY svojim Web3Forms access key-em. Nakon toga forma salje online narudzbe direktno na mail povezan s Web3Forms racunom.
+
+VERZIJA: Standardi svih pizza usklađeni s dokumentom Standard.pdf; postojeće cijene nisu mijenjane.
