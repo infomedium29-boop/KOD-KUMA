@@ -202,7 +202,7 @@ if (orderForm) {
 
 // Brendirani modal: najava skorog otvaranja
 (function () {
-  const sessionKey = 'kodKumaOpeningNoticeSeen';
+  const sessionKey = 'kodKumaOpeningNoticeSeenV2';
 
   function hasSeenNotice() {
     try {
@@ -236,11 +236,11 @@ if (orderForm) {
         <button class="opening-modal-close" type="button" aria-label="Zatvori obavijest" data-opening-close>×</button>
         <div class="opening-modal-content">
           <div class="opening-modal-logo">Kod Kuma<span>.</span></div>
-          <p class="opening-modal-kicker">Nešto posebno se priprema</p>
-          <h2 id="opening-modal-title">Uskoro otvaramo vrata.</h2>
-          <p class="opening-modal-text">Još malo strpljenja — pripremamo mjesto ispunjeno dobrim okusima, toplom atmosferom i trenucima za pamćenje.</p>
+          <p class="opening-modal-kicker">Vrijeme je za dobre okuse</p>
+          <h2 id="opening-modal-title">Otvaramo u petak, 28. kolovoza!</h2>
+          <p class="opening-modal-text">Od petka vas čekamo uz naše pizze, dobru atmosferu i okuse zbog kojih ćete se rado vraćati.</p>
           <button class="btn primary opening-modal-btn" type="button" data-opening-close>Pogledaj što pripremamo</button>
-          <span class="opening-modal-note">Vidimo se uskoro u restoranu Kod Kuma</span>
+          <span class="opening-modal-note">Vidimo se od petka u restoranu Kod Kuma</span>
         </div>
       </div>`;
 
