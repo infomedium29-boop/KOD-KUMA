@@ -266,7 +266,7 @@
   .cookie-option{align-items:flex-start}
 }
 
-/* Najava otvaranja — početni brendirani modal */
+/* Obavijest o neradnim danima — brendirani modal */
 body.opening-modal-active{
   overflow:hidden;
 }

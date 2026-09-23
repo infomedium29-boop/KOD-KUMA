@@ -200,9 +200,10 @@ if (orderForm) {
   }
 })();
 
-// Brendirani modal: najava skorog otvaranja
+// Brendirani modal: obavijest o neradnim danima
 (function () {
-  const sessionKey = 'kodKumaOpeningNoticeSeenV2';
+  const sessionKey = 'kodKumaClosureNoticeSep2026SeenV1';
+  const noticeExpiresAt = new Date('2026-09-28T00:00:00+02:00').getTime();
 
   function hasSeenNotice() {
     try {
@@ -221,7 +222,7 @@ if (orderForm) {
   }
 
   function createOpeningModal() {
-    if (hasSeenNotice()) return;
+    if (Date.now() >= noticeExpiresAt || hasSeenNotice()) return;
 
     const modal = document.createElement('div');
     modal.className = 'opening-modal';
@@ -236,11 +237,11 @@ if (orderForm) {
         <button class="opening-modal-close" type="button" aria-label="Zatvori obavijest" data-opening-close>×</button>
         <div class="opening-modal-content">
           <div class="opening-modal-logo">Kod Kuma<span>.</span></div>
-          <p class="opening-modal-kicker">Vrijeme je za dobre okuse</p>
-          <h2 id="opening-modal-title">Otvaramo u petak, 28. kolovoza!</h2>
-          <p class="opening-modal-text">Od petka vas čekamo uz naše pizze, dobru atmosferu i okuse zbog kojih ćete se rado vraćati.</p>
-          <button class="btn primary opening-modal-btn" type="button" data-opening-close>Pogledaj što pripremamo</button>
-          <span class="opening-modal-note">Vidimo se od petka u restoranu Kod Kuma</span>
+          <p class="opening-modal-kicker">Važna obavijest</p>
+          <h2 id="opening-modal-title">Ne radimo 25., 26. i 27. rujna</h2>
+          <p class="opening-modal-text">Restoran Kod Kuma neće raditi u petak 25.09., subotu 26.09. i nedjelju 27.09. Hvala vam na razumijevanju.</p>
+          <button class="btn primary opening-modal-btn" type="button" data-opening-close>U redu, hvala</button>
+          <span class="opening-modal-note">Kod Kuma · obavijest o radnom vremenu</span>
         </div>
       </div>`;
 
