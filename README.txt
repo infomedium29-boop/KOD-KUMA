@@ -1,26 +1,17 @@
-RESTORAN AMFORA - STATIČNI SAJT
+KOD KUMA — Cloudflare Pages + Web3Forms online narudžbe
 
-Stranice:
-- index.html
-- jelovnik.html
-- o-nama.html
-- rezervacija.html
-- kontakt.html
+Ova verzija NE sadrži Web3Forms Access Key u HTML-u ili JavaScriptu.
+Online narudžbe idu kroz Cloudflare Pages Function: /api/order
 
-Upload na GitHub/Cloudflare:
-1. Uploaduj sve fajlove i foldere iz ovog foldera u GitHub repo.
-2. U Cloudflare Pages spoji repo.
-3. Build command ostavi prazno.
-4. Output folder ostavi / ili root.
+CLOUDFLARE POSTAVKA PRIJE TESTIRANJA:
+1. Cloudflare Pages projekt > Settings > Variables and secrets
+2. Production > Add
+3. Type: Secret
+4. Name: WEB3FORMS_ACCESS_KEY
+5. Value: Web3Forms Form Access Key
+6. Save
+7. Nakon toga deployati ovu verziju projekta.
 
-Napomene:
-- Scroll trigger je u assets/js/main.js
-- Glavna panorama je assets/img/panorama-restoran.avif
-- Tekstove i cijene možeš mijenjati direktno u HTML fajlovima.
-- Forma rezervacije je statična. Za pravo slanje treba spojiti Formspree/Basin/Cloudflare Workers.
+Ako koristite Preview deployment za testiranje, isti secret dodajte i u Preview okruženje.
 
-
-WEB3FORMS:
-U datoteci narudzba.html zamijeni OVDJE_UBACI_WEB3FORMS_ACCESS_KEY svojim Web3Forms access key-em. Nakon toga forma salje online narudzbe direktno na mail povezan s Web3Forms racunom.
-
-VERZIJA: Standardi svih pizza usklađeni s dokumentom Standard.pdf; postojeće cijene nisu mijenjane.
+Važno: functions/api/order.js mora ostati u repozitoriju jer ona server-side dodaje Access Key i prosljeđuje narudžbu Web3Formsu.

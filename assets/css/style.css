@@ -427,3 +427,35 @@ body.opening-modal-active{
 @media (prefers-reduced-motion:reduce){
   .opening-modal,.opening-modal-card{transition:none}
 }
+
+
+/* Web3Forms status za online narudžbe */
+.order-form-status{
+  min-height:0;
+  padding:0;
+  border:0;
+  border-radius:16px;
+  font-weight:700;
+  line-height:1.5;
+  transition:.2s ease;
+}
+.order-form-status.success,
+.order-form-status.error{
+  padding:15px 18px;
+  border:1px solid var(--line);
+}
+.order-form-status.success{
+  background:rgba(77,156,96,.13);
+  color:#c9efcf;
+  border-color:rgba(115,204,135,.3);
+}
+.order-form-status.error{
+  background:rgba(176,74,60,.13);
+  color:#ffd2ca;
+  border-color:rgba(230,108,90,.28);
+}
+#order-submit:disabled{
+  opacity:.65;
+  cursor:wait;
+  transform:none;
+}

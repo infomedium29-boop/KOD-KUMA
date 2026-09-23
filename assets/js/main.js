@@ -36,12 +36,14 @@ if (window.gsap && window.ScrollTrigger) {
 }
 
 // Online narudžba: dodavanje jela, izračun ukupne cijene i slanje u Web3Forms
-const orderForm = document.querySelector('form.form');
+const orderForm = document.querySelector('#order-form');
 const orderBuilder = document.querySelector('.order-builder');
 const addDishBtn = document.querySelector('#add-dish');
 const totalEl = document.querySelector('#order-total');
 const totalInput = document.querySelector('#narudzba-total');
 const summaryInput = document.querySelector('#narudzba-summary');
+const orderSubmitBtn = document.querySelector('#order-submit');
+const orderStatus = document.querySelector('#order-form-status');
 
 function getDishPrice(dishText) {
   const match = dishText.match(/-\s*(\d+(?:[,.]\d+)?)\s*€/);
@@ -99,6 +101,12 @@ function createOrderRow() {
   return newRow;
 }
 
+function showOrderStatus(message, type = '') {
+  if (!orderStatus) return;
+  orderStatus.textContent = message;
+  orderStatus.className = `order-form-status${type ? ` ${type}` : ''}`;
+}
+
 if (addDishBtn && orderBuilder) {
   addDishBtn.addEventListener('click', () => {
     const newRow = createOrderRow();
@@ -111,15 +119,63 @@ if (addDishBtn && orderBuilder) {
 }
 
 if (orderForm) {
-  orderForm.addEventListener('input', calculateOrder);
-  orderForm.addEventListener('change', calculateOrder);
+  orderForm.addEventListener('input', () => {
+    calculateOrder();
+    if (orderStatus?.textContent) showOrderStatus('');
+  });
+  orderForm.addEventListener('change', () => {
+    calculateOrder();
+    if (orderStatus?.textContent) showOrderStatus('');
+  });
   calculateOrder();
 
-  orderForm.addEventListener('submit', (event) => {
+  orderForm.addEventListener('submit', async (event) => {
+    event.preventDefault();
+
     const result = calculateOrder();
     if (!result.items.length) {
-      event.preventDefault();
-      alert('Molimo odaberite barem jedno jelo i količinu.');
+      showOrderStatus('Molimo odaberite barem jedno jelo i količinu.', 'error');
+      return;
+    }
+
+    const pickupMethod = orderForm.querySelector('[name="nacin_preuzimanja"]')?.value;
+    const addressInput = orderForm.querySelector('[name="adresa"]');
+    if (pickupMethod === 'Dostava' && !addressInput?.value.trim()) {
+      showOrderStatus('Za dostavu je potrebno upisati adresu.', 'error');
+      addressInput?.focus();
+      return;
+    }
+
+    if (orderSubmitBtn) {
+      orderSubmitBtn.disabled = true;
+      orderSubmitBtn.textContent = 'Šaljem narudžbu...';
+    }
+    showOrderStatus('');
+
+    try {
+      const formData = new FormData(orderForm);
+      const response = await fetch(orderForm.action, {
+        method: 'POST',
+        body: formData,
+        headers: { Accept: 'application/json' }
+      });
+      const data = await response.json().catch(() => ({}));
+
+      if (!response.ok || data.success === false) {
+        throw new Error(data.message || 'Narudžbu trenutno nije moguće poslati.');
+      }
+
+      showOrderStatus('Narudžba je uspješno poslana. Hvala! Kontaktirat ćemo vas ako bude potrebno.', 'success');
+      orderForm.reset();
+      calculateOrder();
+    } catch (error) {
+      console.error('Web3Forms order error:', error);
+      showOrderStatus('Narudžba nije poslana. Pokušajte ponovno ili nas kontaktirajte telefonom.', 'error');
+    } finally {
+      if (orderSubmitBtn) {
+        orderSubmitBtn.disabled = false;
+        orderSubmitBtn.textContent = 'Pošalji narudžbu';
+      }
     }
   });
 }

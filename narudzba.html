@@ -33,8 +33,7 @@
 
     <section class="section-padding">
       <div class="container form-wrap">
-        <form class="form" action="https://api.web3forms.com/submit" method="POST">
-          <input type="hidden" name="access_key" value="OVDJE_UBACI_WEB3FORMS_ACCESS_KEY">
+        <form class="form" id="order-form" action="/api/order" method="POST">
           <input type="hidden" name="subject" value="Nova online narudžba - Restoran Kod Kuma">
           <input type="hidden" name="from_name" value="Restoran Kod Kuma web stranica">
           <input type="checkbox" name="botcheck" class="hidden" style="display:none;">
@@ -338,7 +337,8 @@
             <textarea name="napomena" placeholder="Posebne želje, alergije, pribor, način plaćanja..."></textarea>
           </label>
 
-          <button class="btn primary" type="submit">Pošalji narudžbu</button>
+          <button class="btn primary" type="submit" id="order-submit">Pošalji narudžbu</button>
+          <div class="order-form-status" id="order-form-status" role="status" aria-live="polite"></div>
         </form>
       </div>
     </section>
