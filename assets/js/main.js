@@ -50,6 +50,34 @@ function getDishPrice(dishText) {
   return match ? Number(match[1].replace(',', '.')) : 0;
 }
 
+
+function formatDishPrice(dishText) {
+  const price = getDishPrice(dishText);
+  return price ? `${price.toFixed(2).replace('.', ',')} €` : '';
+}
+
+function updateOrderReferencePrices() {
+  if (!orderForm) return;
+  orderForm.querySelectorAll('.order-row').forEach((row) => {
+    const select = row.querySelector('.dish-select');
+    if (!select) return;
+    let pair = row.querySelector('.order-price-pair');
+    if (!pair) {
+      pair = document.createElement('div');
+      pair.className = 'order-price-pair';
+      select.insertAdjacentElement('afterend', pair);
+    }
+    const priceText = formatDishPrice(select.value || '');
+    if (!priceText) {
+      pair.classList.remove('is-visible');
+      pair.innerHTML = '';
+      return;
+    }
+    pair.innerHTML = `<span>Aktualna cijena <b>${priceText}</b></span><span>10.09.2026. <b>${priceText}</b></span>`;
+    pair.classList.add('is-visible');
+  });
+}
+
 function renumberOrderRows() {
   document.querySelectorAll('.order-row').forEach((row, index) => {
     const number = index + 1;
@@ -81,6 +109,9 @@ function calculateOrder() {
 
   const totalText = `${total.toFixed(2).replace('.', ',')} €`;
   if (totalEl) totalEl.textContent = totalText;
+  const totalReferenceEl = document.querySelector('#order-total-reference');
+  if (totalReferenceEl) totalReferenceEl.textContent = `10.09.2026.: ${totalText}`;
+  updateOrderReferencePrices();
   if (totalInput) totalInput.value = totalText;
   if (summaryInput) summaryInput.value = items.join('\n');
 
@@ -97,6 +128,8 @@ function createOrderRow() {
 
   if (select) select.value = '';
   if (qty) qty.value = '0';
+  const pair = newRow.querySelector('.order-price-pair');
+  if (pair) { pair.innerHTML = ''; pair.classList.remove('is-visible'); }
 
   return newRow;
 }

@@ -459,3 +459,33 @@ body.opening-modal-active{
   cursor:wait;
   transform:none;
 }
+
+
+/* Sidrene cijene + digitalni cjenik — 01.10.2026. */
+.pricing-law-note{display:flex;align-items:center;gap:14px;width:max-content;max-width:100%;margin-top:24px;padding:12px 15px;border:1px solid rgba(255,207,134,.22);border-radius:18px;background:rgba(255,255,255,.045);backdrop-filter:blur(10px)}
+.pricing-law-note>span{flex:0 0 auto;display:inline-flex;align-items:center;justify-content:center;min-height:34px;padding:0 11px;border-radius:999px;background:linear-gradient(135deg,var(--gold),var(--gold2));color:#1a0d03;font-size:11px;font-weight:900;letter-spacing:.08em}
+.pricing-law-note p{margin:0!important;font-size:13px!important;line-height:1.45!important;color:#e9dcc8!important}
+.menu-price-block{flex:0 0 auto;display:flex;flex-direction:column;align-items:flex-end;gap:7px;text-align:right}
+.menu-price-block>b{color:var(--gold2);white-space:nowrap}
+.menu-reference-price{display:flex;align-items:center;gap:7px;padding:6px 9px;border:1px solid rgba(255,207,134,.14);border-radius:999px;background:rgba(215,155,69,.065);white-space:nowrap}
+.menu-reference-price small{display:inline!important;margin:0!important;color:#a99a86!important;font-size:9px!important;font-weight:800!important;line-height:1!important;letter-spacing:.04em;text-transform:uppercase}
+.menu-reference-price strong{color:#f4dfbf;font-size:11px;font-weight:800;line-height:1}
+.digital-price-wrap{margin-top:26px}
+.digital-price-card{position:relative;overflow:hidden;display:grid;grid-template-columns:minmax(0,1.1fr) minmax(360px,.9fr);gap:42px;align-items:center;padding:38px;border:1px solid rgba(255,207,134,.18);border-radius:30px;background:linear-gradient(135deg,rgba(215,155,69,.11),rgba(255,255,255,.035) 50%,rgba(255,207,134,.06));box-shadow:0 28px 90px rgba(0,0,0,.22)}
+.digital-price-card:after{content:"";position:absolute;right:-130px;top:-160px;width:340px;height:340px;border-radius:50%;background:radial-gradient(circle,rgba(255,207,134,.13),transparent 66%);pointer-events:none}
+.digital-price-copy{position:relative;z-index:1}
+.digital-price-copy h2{font-size:clamp(36px,4vw,58px);max-width:650px;margin-bottom:16px}
+.digital-price-copy>p:not(.eyebrow){max-width:620px;margin:0;color:var(--muted);line-height:1.7}
+.digital-price-actions{position:relative;z-index:1;display:grid;gap:12px}
+.digital-download{display:grid;grid-template-columns:54px 1fr;gap:15px;align-items:center;min-height:74px;padding:13px 16px;border:1px solid rgba(255,255,255,.12);border-radius:20px;background:rgba(8,6,4,.34);transition:.25s ease}
+.digital-download:hover{transform:translateY(-2px);border-color:rgba(255,207,134,.38);background:rgba(215,155,69,.09)}
+.digital-file-type{display:grid;place-items:center;width:54px;height:46px;border-radius:14px;background:linear-gradient(135deg,var(--gold),var(--gold2));color:#1a0d03;font-size:12px;font-weight:900;letter-spacing:.08em}
+.digital-download>span:last-child{display:grid;gap:3px}.digital-download strong{font-size:14px}.digital-download small{color:var(--muted);font-size:11px}
+.digital-price-meta{grid-column:1/-1;display:flex;flex-wrap:wrap;gap:10px 20px;padding-top:18px;border-top:1px solid rgba(255,255,255,.09);color:#aa9d8c;font-size:11px}.digital-price-meta b{color:#e8d9c2}
+.order-law-note{margin:2px 0 4px;padding:12px 14px;border:1px solid rgba(255,207,134,.15);border-radius:16px;background:rgba(215,155,69,.06);color:#bdaa91;font-size:12px;line-height:1.55}
+.order-price-pair{display:none;margin-top:9px;padding:9px 11px;border:1px solid rgba(255,255,255,.09);border-radius:13px;background:rgba(255,255,255,.035);font-size:11px;line-height:1.45}
+.order-price-pair.is-visible{display:flex;flex-wrap:wrap;gap:5px 12px}.order-price-pair span{color:#aa9d8c}.order-price-pair b{color:#fff2df}
+.order-total-values{display:grid;gap:3px;text-align:right}.order-total-values small{color:#cfbfa8;font-size:11px;font-weight:700}
+@media(max-width:900px){.digital-price-card{grid-template-columns:1fr;gap:26px;padding:28px}.digital-price-actions{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:640px){.pricing-law-note{width:100%;align-items:flex-start}.pricing-law-note p{font-size:12px!important}.menu-item{align-items:flex-start}.menu-price-block{gap:6px}.menu-reference-price{flex-direction:column;align-items:flex-end;gap:3px;border-radius:12px}.digital-price-wrap{margin-top:18px}.digital-price-card{padding:22px;border-radius:24px}.digital-price-copy h2{font-size:38px}.digital-price-actions{grid-template-columns:1fr}.digital-price-meta{display:grid}.order-price-pair.is-visible{display:grid}.order-total-values{text-align:left}}
+
