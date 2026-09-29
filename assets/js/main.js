@@ -73,7 +73,10 @@ function updateOrderReferencePrices() {
       pair.innerHTML = '';
       return;
     }
-    pair.innerHTML = `<span>Aktualna cijena <b>${priceText}</b></span><span>10.09.2026. <b>${priceText}</b></span>`;
+    const isNew = select.selectedOptions[0]?.dataset.new === 'true';
+    pair.innerHTML = isNew
+      ? `<span>Aktualna cijena <b>${priceText}</b></span><span>Referentna cijena za 10.09.2026.: nije dostavljena</span>`
+      : `<span>Aktualna cijena <b>${priceText}</b></span><span>10.09.2026. <b>${priceText}</b></span>`;
     pair.classList.add('is-visible');
   });
 }
@@ -94,6 +97,8 @@ function calculateOrder() {
   const rows = [...orderForm.querySelectorAll('.order-row')];
   let total = 0;
   const items = [];
+  let referenceTotal = 0;
+  let hasNewItems = false;
 
   rows.forEach((row) => {
     const dish = row.querySelector('.dish-select')?.value || '';
@@ -103,6 +108,11 @@ function calculateOrder() {
     if (dish && qty > 0) {
       const lineTotal = price * qty;
       total += lineTotal;
+      if (row.querySelector('.dish-select')?.selectedOptions[0]?.dataset.new === 'true') {
+        hasNewItems = true;
+      } else {
+        referenceTotal += lineTotal;
+      }
       items.push(`${qty}x ${dish} = ${lineTotal.toFixed(2).replace('.', ',')} €`);
     }
   });
@@ -110,7 +120,9 @@ function calculateOrder() {
   const totalText = `${total.toFixed(2).replace('.', ',')} €`;
   if (totalEl) totalEl.textContent = totalText;
   const totalReferenceEl = document.querySelector('#order-total-reference');
-  if (totalReferenceEl) totalReferenceEl.textContent = `10.09.2026.: ${totalText}`;
+  if (totalReferenceEl) totalReferenceEl.textContent = hasNewItems
+    ? 'Referentna usporedba za cijelu narudžbu nije dostupna.'
+    : `10.09.2026.: ${referenceTotal.toFixed(2).replace('.', ',')} €`;
   updateOrderReferencePrices();
   if (totalInput) totalInput.value = totalText;
   if (summaryInput) summaryInput.value = items.join('\n');
@@ -160,9 +172,19 @@ if (orderForm) {
     calculateOrder();
     if (orderStatus?.textContent) showOrderStatus('');
   });
+  // Direct link from the featured platter in the menu.
+  if (new URLSearchParams(window.location.search).get('jelo') === 'plata-kod-kuma') {
+    const firstSelect = orderForm.querySelector('.dish-select');
+    const platter = [...(firstSelect?.options || [])].find(opt => opt.value.startsWith('Plata Kod Kuma za 2 osobe - '));
+    if (platter) {
+      firstSelect.value = platter.value;
+      const qty = orderForm.querySelector('.dish-qty');
+      if (qty) qty.value = '1';
+    }
+  }
   calculateOrder();
 
-  orderForm.addEventListener('submit', async (event) => {
+  orderForm.addEventListener('submit' , async (event) => {
     event.preventDefault();
 
     const result = calculateOrder();

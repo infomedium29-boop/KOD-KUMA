@@ -6,3 +6,10 @@
 - Službeno strukturirane datoteke nose naziv s vrstom objekta, adresom, oznakom objekta, brojem pohrane te datumom/vremenom objave.
 - Alias `aktualni-cjenik.csv/xml` ostavljen je radi lakšeg tehničkog dohvaćanja.
 - Prethodne verzije spremati u `/cjenici/arhiva/` i ostaviti javno dostupnima najmanje 30 dana.
+
+## Proširenje jelovnika – nova jela (29.09.2026.)
+
+- U jelovnik, online narudžbu i sve CSV/XML datoteke dodane su 32 stavke iz tri dostavljena PDF-a.
+- Za nove stavke cijena koja je vrijedila 10.09.2026. nije dostavljena. Polje `dodatna_cijena_10_09_2026` ostavljeno je prazno; na webu se ne prikazuje izmišljena referentna cijena. Prije objave vlasnik treba potvrditi datum početka ponude i obvezu/prikaz odgovarajuće povijesne cijene.
+- U dokumentu za odrezak Kod Kuma postoji razlika između opisa priloga i recepture (pekarski krumpir / pire); u javnom opisu zato zasad stoji „krumpirov prilog”. Vlasnik može potvrditi točan naziv.
+- Cijene i porcije prenesene su iz dostavljenih PDF-ova; provjeriti prije javne objave.
