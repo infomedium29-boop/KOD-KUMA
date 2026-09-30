@@ -11,5 +11,5 @@
 
 - U jelovnik, online narudžbu i sve CSV/XML datoteke dodane su 32 stavke iz tri dostavljena PDF-a.
 - Za nove stavke cijena koja je vrijedila 10.09.2026. nije dostavljena. Polje `dodatna_cijena_10_09_2026` ostavljeno je prazno; na webu se ne prikazuje izmišljena referentna cijena. Prije objave vlasnik treba potvrditi datum početka ponude i obvezu/prikaz odgovarajuće povijesne cijene.
-- U dokumentu za odrezak Kod Kuma postoji razlika između opisa priloga i recepture (pekarski krumpir / pire); u javnom opisu zato zasad stoji „krumpirov prilog”. Vlasnik može potvrditi točan naziv.
+- Naknadnom potvrdom vlasnika za Odrezak Kod Kuma javni opis je usklađen: koristi se svinjski kare, a prilog su krompirići.
 - Cijene i porcije prenesene su iz dostavljenih PDF-ova; provjeriti prije javne objave.
