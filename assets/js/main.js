@@ -146,6 +146,20 @@ function createOrderRow() {
   return newRow;
 }
 
+
+function updateFulfilmentFields() {
+  if (!orderForm) return;
+  const method = orderForm.querySelector('[name="nacin_preuzimanja"]')?.value;
+  const addressField = orderForm.querySelector('#delivery-address-field');
+  const addressInput = orderForm.querySelector('[name="adresa"]');
+  const isDelivery = method === 'Dostava';
+  if (addressField) addressField.classList.toggle('is-hidden', !isDelivery);
+  if (addressInput) {
+    addressInput.required = isDelivery;
+    if (!isDelivery) addressInput.value = '';
+  }
+}
+
 function showOrderStatus(message, type = '') {
   if (!orderStatus) return;
   orderStatus.textContent = message;
@@ -168,8 +182,9 @@ if (orderForm) {
     calculateOrder();
     if (orderStatus?.textContent) showOrderStatus('');
   });
-  orderForm.addEventListener('change', () => {
+  orderForm.addEventListener('change', (event) => {
     calculateOrder();
+    if (event.target?.name === 'nacin_preuzimanja') updateFulfilmentFields();
     if (orderStatus?.textContent) showOrderStatus('');
   });
   // Direct link from the featured platter in the menu.
@@ -182,6 +197,7 @@ if (orderForm) {
       if (qty) qty.value = '1';
     }
   }
+  updateFulfilmentFields();
   calculateOrder();
 
   orderForm.addEventListener('submit' , async (event) => {
@@ -222,6 +238,7 @@ if (orderForm) {
 
       showOrderStatus('Narudžba je uspješno poslana. Hvala! Kontaktirat ćemo vas ako bude potrebno.', 'success');
       orderForm.reset();
+      updateFulfilmentFields();
       calculateOrder();
     } catch (error) {
       console.error('Web3Forms order error:', error);

@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Online narudžba | Restoran Kod Kuma</title>
-  <meta name="description" content="Naručite pizze, sendviče, burgere, roštilj, glavna jela, plate, salate i priloge iz restorana Kod Kuma online." />
+  <title>Dostava i osobno preuzimanje | Kod Kuma</title>
+  <meta name="description" content="Naručite Kod Kuma online za dostavu na adresu ili osobno preuzimanje u objektu u Vukovaru." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
@@ -19,20 +19,25 @@
       <a href="jelovnik.html">Jelovnik</a>
       <a href="o-nama.html">O nama</a>
       <a href="kontakt.html">Kontakt</a>
-      <a class="nav-cta" href="narudzba.html">Naruči online</a>
+      <a class="nav-cta" href="narudzba.html">Naruči</a>
     </nav>
   </header>
 
   <main>
     <section class="page-hero">
       <div class="container">
-        <p class="eyebrow">Online narudžba</p>
-        <h1>Naručite omiljeno jelo.</h1>
+        <p class="eyebrow">Dostava &amp; osobno preuzimanje</p>
+        <h1>Naručite kako vam odgovara.</h1>
+        <p>Odaberite dostavu na svoju adresu ili osobno preuzimanje narudžbe u objektu.</p>
       </div>
     </section>
 
     <section class="section-padding">
       <div class="container form-wrap">
+        <div class="order-fulfilment-notice">
+          <div class="order-fulfilment-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 7h11v9H3z"/><path d="M14 10h3l4 4v2h-7z"/><circle cx="7" cy="18" r="2"/><circle cx="18" cy="18" r="2"/></svg></div>
+          <div><span>DOSTAVA &amp; PREUZIMANJE</span><h2>Vi birate način preuzimanja.</h2><p>Naručite dostavu na adresu ili osobno preuzmite pripremljenu narudžbu u objektu. <b>Konzumacija hrane u objektu nije dostupna.</b></p></div>
+        </div>
         <form class="form" id="order-form" action="/api/order" method="POST">
           <input type="hidden" name="subject" value="Nova online narudžba - Restoran Kod Kuma">
           <input type="hidden" name="from_name" value="Restoran Kod Kuma web stranica">
@@ -48,13 +53,14 @@
 
           <label>Način preuzimanja
             <select name="nacin_preuzimanja" required>
-              <option value="Osobno preuzimanje">Osobno preuzimanje</option>
-              <option value="Dostava">Dostava</option>
+              <option value="Osobno preuzimanje">Osobno preuzimanje u objektu</option>
+              <option value="Dostava">Dostava na adresu</option>
             </select>
           </label>
 
-          <label>Adresa za dostavu
-            <input type="text" name="adresa" placeholder="Ulica, broj, mjesto">
+          <label id="delivery-address-field" class="delivery-address-field">Adresa za dostavu
+            <input type="text" name="adresa" placeholder="Ulica, broj, mjesto" autocomplete="street-address">
+            <small>Polje je potrebno samo kada odaberete dostavu.</small>
           </label>
 
           <label class="centered-picker">Vrijeme preuzimanja / dostave
@@ -543,7 +549,7 @@
 
   <footer class="footer">
     <div class="container footer-grid">
-      <div><a class="logo" href="index.html">Kod Kuma<span>.</span></a><p>Premium restoran s toplim ambijentom.</p></div>
+      <div><a class="logo" href="index.html">Kod Kuma<span>.</span></a><p>Dostava i osobno preuzimanje u Vukovaru. Konzumacija hrane u objektu nije dostupna.</p></div>
       <div><h4>Kontakt</h4><p>+385 92 460 5349<br>pizzakodkuma@gmail.com</p></div>
       <div><h4>Radno vrijeme</h4><p>Ponedjeljak: zatvoreno<br>Utorak – petak: 14:00 – 22:00<br>Subota – nedjelja: 10:00 – 22:00</p></div>
     <div><h4>Pravno</h4><p class="footer-legal"><a href="politika-privatnosti.html">Politika privatnosti</a><a href="politika-kolacica.html">Politika kolačića</a></p></div></div>
