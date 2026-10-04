@@ -1,548 +1,81 @@
 <!doctype html>
 <html lang="hr">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Dostava i osobno preuzimanje | Kod Kuma</title>
-  <meta name="description" content="Naručite Kod Kuma online za dostavu na adresu ili osobno preuzimanje u objektu u Vukovaru." />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Narudžbe telefonom | Kod Kuma Vukovar</title>
+  <meta name="description" content="Kod Kuma Vukovar trenutno prima narudžbe telefonom za dostavu na adresu ili osobno preuzimanje. Pregledajte jelovnik i nazovite nas.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/style.css" />
-<link rel="canonical" href="https://kod-kuma.hr/narudzba.html"><link rel="alternate" type="text/csv" href="https://kod-kuma.hr/cjenici/restoran-Ulica_Kraljice_Jelene_32000_Vukovar-U-01_001_20261001_0800.csv"><link rel="alternate" type="application/xml" href="https://kod-kuma.hr/cjenici/restoran-Ulica_Kraljice_Jelene_32000_Vukovar-U-01_001_20261001_0800.xml"></head>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="canonical" href="https://kod-kuma.hr/narudzba.html">
+</head>
 <body>
   <header class="site-header">
-    <a class="logo" href="index.html">Kod Kuma<span>.</span></a>
+    <a class="logo" href="index.html" aria-label="Kod Kuma početna">Kod Kuma<span>.</span></a>
     <button class="menu-toggle" aria-label="Otvori meni">☰</button>
     <nav class="nav">
       <a href="index.html">Početna</a>
       <a href="jelovnik.html">Jelovnik</a>
       <a href="o-nama.html">O nama</a>
       <a href="kontakt.html">Kontakt</a>
-      <a class="nav-cta" href="narudzba.html">Naruči</a>
+      <a class="nav-cta" href="tel:+385924605349" aria-label="Nazovi Kod Kuma za narudžbu">Nazovi</a>
     </nav>
   </header>
 
-  <main>
-    <section class="page-hero">
-      <div class="container">
-        <p class="eyebrow">Dostava &amp; osobno preuzimanje</p>
-        <h1>Naručite kako vam odgovara.</h1>
-        <p>Odaberite dostavu na svoju adresu ili osobno preuzimanje narudžbe u objektu.</p>
+  <main class="phone-order-page">
+    <section class="page-hero phone-order-hero">
+      <div class="container phone-order-hero-inner">
+        <div>
+          <p class="eyebrow">Narudžbe telefonom</p>
+          <h1>Odaberite.<br>Nazovite.<br>Uživajte.</h1>
+          <p>Pregledajte jelovnik, odaberite omiljena jela i nazovite nas — narudžbu ćemo dogovoriti brzo i jednostavno za dostavu ili osobno preuzimanje.</p>
+          <div class="hero-actions">
+            <a class="btn primary phone-order-call" href="tel:+385924605349"><span class="phone-order-call-icon" aria-hidden="true">☎</span> +385 92 460 5349</a>
+            <a class="btn ghost" href="jelovnik.html">Pogledaj jelovnik</a>
+          </div>
+        </div>
+        <aside class="phone-order-status" aria-label="Informacije o naručivanju">
+          <span class="phone-order-status-kicker">TRENUTNI NAČIN NARUČIVANJA</span>
+          <strong>Telefonom</strong>
+          <p>Dostava na adresu ili osobno preuzimanje u objektu.</p>
+          <div class="phone-order-status-line"></div>
+          <small>Konzumacija hrane u objektu nije dostupna.</small>
+        </aside>
       </div>
     </section>
 
-    <section class="section-padding">
-      <div class="container form-wrap">
-        <div class="order-fulfilment-notice">
-          <div class="order-fulfilment-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 7h11v9H3z"/><path d="M14 10h3l4 4v2h-7z"/><circle cx="7" cy="18" r="2"/><circle cx="18" cy="18" r="2"/></svg></div>
-          <div><span>DOSTAVA &amp; PREUZIMANJE</span><h2>Vi birate način preuzimanja.</h2><p>Naručite dostavu na adresu ili osobno preuzmite pripremljenu narudžbu u objektu. <b>Konzumacija hrane u objektu nije dostupna.</b></p></div>
+    <section class="section-padding phone-order-section">
+      <div class="container phone-order-shell">
+        <div class="phone-order-intro">
+          <p class="eyebrow">Kako naručiti</p>
+          <h2>Tri jednostavna koraka.</h2>
+          <p>Bez formulara i čekanja potvrde — odaberite što želite, nazovite nas i dogovorite preuzimanje.</p>
         </div>
-        <form class="form" id="order-form" action="/api/order" method="POST">
-          <input type="hidden" name="subject" value="Nova online narudžba - Restoran Kod Kuma">
-          <input type="hidden" name="from_name" value="Restoran Kod Kuma web stranica">
-          <input type="checkbox" name="botcheck" class="hidden" style="display:none;">
+        <div class="phone-order-steps">
+          <article class="phone-order-step"><span>01</span><div><h3>Pregledajte jelovnik</h3><p>Odaberite jela i količine koje želite naručiti.</p></div></article>
+          <article class="phone-order-step"><span>02</span><div><h3>Nazovite nas</h3><p>Recite nam svoj odabir i želite li dostavu ili osobno preuzimanje.</p></div></article>
+          <article class="phone-order-step"><span>03</span><div><h3>Dogovorite vrijeme</h3><p>Potvrdit ćemo detalje i vrijeme dostave odnosno preuzimanja.</p></div></article>
+        </div>
 
-          <label>Ime i prezime
-            <input type="text" name="ime_i_prezime" placeholder="Vaše ime" required>
-          </label>
-
-          <label>Telefon
-            <input type="tel" name="telefon" placeholder="+385..." required>
-          </label>
-
-          <label>Način preuzimanja
-            <select name="nacin_preuzimanja" required>
-              <option value="Osobno preuzimanje">Osobno preuzimanje u objektu</option>
-              <option value="Dostava">Dostava na adresu</option>
-            </select>
-          </label>
-
-          <label id="delivery-address-field" class="delivery-address-field">Adresa za dostavu
-            <input type="text" name="adresa" placeholder="Ulica, broj, mjesto" autocomplete="street-address">
-            <small>Polje je potrebno samo kada odaberete dostavu.</small>
-          </label>
-
-          <label class="centered-picker">Vrijeme preuzimanja / dostave
-            <input type="time" name="vrijeme" aria-label="Odaberite vrijeme">
-          </label>
-
-          <div class="order-builder">
-            <div class="order-builder-head">
-              <div>
-                <span class="small-label">Vaša narudžba</span>
-                <h2>Odaberite jela i količinu</h2>
-              </div>
-              <p>Odaberite jela iz svih kategorija i po želji dodajte priloge, salate ili umake.</p>
+        <div class="phone-order-bottom">
+          <div class="phone-order-hours">
+            <span class="small-label">RADNO VRIJEME</span>
+            <h3>Kad smo dostupni.</h3>
+            <div class="phone-order-hours-grid">
+              <div><span>Ponedjeljak</span><strong>Zatvoreno</strong></div>
+              <div><span>Utorak – petak</span><strong>14:00 – 22:00</strong></div>
+              <div><span>Subota – nedjelja</span><strong>10:00 – 22:00</strong></div>
             </div>
-            <div class="order-law-note">Uz aktualnu cijenu prikazujemo i referentnu cijenu od 10.09.2026. gdje je taj podatak dostavljen. Za novo dodane stavke prethodna cijena nije dostavljena.</div>
-
-            <div class="order-row">
-              <label>Jelo
-                <select class="dish-select" name="jelo_1">
-                  <option value="">Odaberite jelo</option>
-                  <optgroup label="Pizze normal">
-                    <option value="Margarita normal - 6,50 €">Margarita normal</option>
-                    <option value="Fungi normal - 7,00 €">Fungi normal</option>
-                    <option value="Capricciosa normal - 8,00 €">Capricciosa normal</option>
-                    <option value="Slavonska normal - 9,00 €">Slavonska normal</option>
-                    <option value="Vezuvio normal - 7,50 €">Vezuvio normal</option>
-                    <option value="Vegetarijana normal - 8,50 €">Vegetarijana normal</option>
-                    <option value="Meksikana normal - 9,00 €">Meksikana normal</option>
-                    <option value="Kod Kuma normal - 10,00 €">Kod Kuma normal</option>
-                    <option value="Pastirska normal - 11,00 €">Pastirska normal</option>
-                    <option value="Pigalo normal - 9,50 €">Pigalo normal</option>
-                    <option value="Pršut rikola normal - 9,50 €">Pršut rikola normal</option>
-                    <option value="Bijela normal - 9,50 €">Bijela normal</option>
-                    <option value="Piletina grill normal - 8,50 €">Piletina grill normal</option>
-                    <option value="Tuna normal - 8,50 €">Tuna normal</option>
-                    <option value="Frutti di mare normal - 10,00 €">Frutti di mare normal</option>
-                    <option value="Quattro Formaggi normal - 8,00 €">Quattro Formaggi normal</option>
-                    <option value="Baranjska ruža normal - 13,50 €">Baranjska ruža normal</option>
-                    <option value="Chef normal - 12,50 €">Chef normal</option>
-                    <option value="Gurmanska normal - 12,00 €">Gurmanska normal</option>
-                    <option value="Olimpik normal - 10,50 €">Olimpik normal</option>
-                  </optgroup>
-                  <optgroup label="Pizze jumbo">
-                    <option value="Margarita jumbo - 12,50 €">Margarita jumbo</option>
-                    <option value="Fungi jumbo - 13,00 €">Fungi jumbo</option>
-                    <option value="Capricciosa jumbo - 14,50 €">Capricciosa jumbo</option>
-                    <option value="Slavonska jumbo - 17,00 €">Slavonska jumbo</option>
-                    <option value="Vezuvio jumbo - 14,00 €">Vezuvio jumbo</option>
-                    <option value="Vegetarijana jumbo - 16,00 €">Vegetarijana jumbo</option>
-                    <option value="Meksikana jumbo - 18,00 €">Meksikana jumbo</option>
-                    <option value="Kod Kuma jumbo - 19,00 €">Kod Kuma jumbo</option>
-                    <option value="Pastirska jumbo - 19,50 €">Pastirska jumbo</option>
-                    <option value="Pigalo jumbo - 18,00 €">Pigalo jumbo</option>
-                    <option value="Pršut rikola jumbo - 16,00 €">Pršut rikola jumbo</option>
-                    <option value="Bijela jumbo - 17,50 €">Bijela jumbo</option>
-                    <option value="Piletina grill jumbo - 16,00 €">Piletina grill jumbo</option>
-                    <option value="Tuna jumbo - 15,00 €">Tuna jumbo</option>
-                    <option value="Frutti di mare jumbo - 19,00 €">Frutti di mare jumbo</option>
-                    <option value="Quattro Formaggi jumbo - 16,00 €">Quattro Formaggi jumbo</option>
-                    <option value="Baranjska ruža jumbo - 25,50 €">Baranjska ruža jumbo</option>
-                    <option value="Chef jumbo - 24,50 €">Chef jumbo</option>
-                    <option value="Gurmanska jumbo - 24,00 €">Gurmanska jumbo</option>
-                    <option value="Olimpik jumbo - 21,00 €">Olimpik jumbo</option>
-                  </optgroup>
-                  <optgroup label="Sendviči">
-                    <option value="Sendvič Piletina - 7,50 €">Sendvič Piletina</option>
-                    <option value="Sendvič Suhi vrat - 7,00 €">Sendvič Suhi vrat</option>
-                    <option value="Sendvič Kulen - 7,00 €">Sendvič Kulen</option>
-                    <option value="Sendvič Pršut - 7,50 €">Sendvič Pršut</option>
-                    <option value="Sendvič Šunka - 6,00 €">Sendvič Šunka</option>
-                  </optgroup>
-                  <optgroup label="Predjela">
-                    <option data-new="true" value="Mazalice (6 kom) - 8,50 €">Mazalice (6 kom) · 8,50 €</option>
-                    <option data-new="true" value="Pohana paprika punjena sirom - 8,90 €">Pohana paprika punjena sirom · 8,90 €</option>
-                  </optgroup>
-                  <optgroup label="Burgeri">
-                    <option data-new="true" value="Burger Kod Kuma - 9,90 €">Burger Kod Kuma · 9,90 €</option>
-                    <option data-new="true" value="Burger Pul Pork - 9,90 €">Burger Pul Pork · 9,90 €</option>
-                  </optgroup>
-                  <optgroup label="Pohana jela">
-                    <option data-new="true" value="Bečka svinjska šnicla - 10,50 €">Bečka svinjska šnicla · 10,50 €</option>
-                    <option data-new="true" value="Pileći prutići u sezamu - 10,50 €">Pileći prutići u sezamu · 10,50 €</option>
-                    <option data-new="true" value="Odrezak Kod Kuma - 13,50 €">Odrezak Kod Kuma · 13,50 €</option>
-                  </optgroup>
-                  <optgroup label="Glavna jela">
-                    <option data-new="true" value="Gurmanska pljeskavica - 12,50 €">Gurmanska pljeskavica · 12,50 €</option>
-                    <option data-new="true" value="Ćevapi mali u lepinji (5 kom) - 7,00 €">Ćevapi mali u lepinji (5 kom) · 7,00 €</option>
-                    <option data-new="true" value="Ćevapi veliki u lepinji (10 kom) - 10,50 €">Ćevapi veliki u lepinji (10 kom) · 10,50 €</option>
-                    <option data-new="true" value="Pileći uštipci (8 kom) - 9,50 €">Pileći uštipci (8 kom) · 9,50 €</option>
-                    <option data-new="true" value="Punjena vješalica - 12,90 €">Punjena vješalica · 12,90 €</option>
-                    <option data-new="true" value="Smazalica - 13,50 €">Smazalica · 13,50 €</option>
-                    <option data-new="true" value="Otkošteni batak / zabatak - 10,50 €">Otkošteni batak / zabatak · 10,50 €</option>
-                    <option data-new="true" value="Svinjski vrat sa žara - 10,50 €">Svinjski vrat sa žara · 10,50 €</option>
-                  </optgroup>
-                  <optgroup label="Plate">
-                    <option data-new="true" value="Plata Kod Kuma za 2 osobe - 32,00 €">Plata Kod Kuma za 2 osobe · 32,00 €</option>
-                  </optgroup>
-                  <optgroup label="Prilozi">
-                    <option data-new="true" value="Pekarski krumpir - 3,50 €">Pekarski krumpir · 3,50 €</option>
-                    <option data-new="true" value="Pommes - 2,50 €">Pommes · 2,50 €</option>
-                    <option data-new="true" value="Gljive sa žara - 3,50 €">Gljive sa žara · 3,50 €</option>
-                    <option data-new="true" value="Grilano povrće - 4,50 €">Grilano povrće · 4,50 €</option>
-                    <option data-new="true" value="Lepinja - 4,00 €">Lepinja · 4,00 €</option>
-                  </optgroup>
-                  <optgroup label="Umaci">
-                    <option data-new="true" value="Tartar umak - 2,50 €">Tartar umak · 2,50 €</option>
-                    <option data-new="true" value="Majoneza - 2,00 €">Majoneza · 2,00 €</option>
-                    <option data-new="true" value="Kečap - 2,00 €">Kečap · 2,00 €</option>
-                    <option data-new="true" value="Kiselo vrhnje - 2,00 €">Kiselo vrhnje · 2,00 €</option>
-                  </optgroup>
-                  <optgroup label="Salate">
-                    <option data-new="true" value="Zelena salata - 3,00 €">Zelena salata · 3,00 €</option>
-                    <option data-new="true" value="Rajčica s lukom - 3,50 €">Rajčica s lukom · 3,50 €</option>
-                    <option data-new="true" value="Krastavci s kiselim vrhnjem - 3,50 €">Krastavci s kiselim vrhnjem · 3,50 €</option>
-                    <option data-new="true" value="Kupus salata - 3,00 €">Kupus salata · 3,00 €</option>
-                    <option data-new="true" value="Šopska salata - 4,00 €">Šopska salata · 4,00 €</option>
-                    <option data-new="true" value="Miješana sezonska salata - 3,50 €">Miješana sezonska salata · 3,50 €</option>
-                    <option data-new="true" value="Pečena paprika - 4,00 €">Pečena paprika · 4,00 €</option>
-                  </optgroup>
-
-
-                </select>
-              </label>
-              <label>Količina
-                <input class="dish-qty" type="number" name="kolicina_1" min="0" max="20" value="0">
-              </label>
-            </div>
-
-            <div class="order-row">
-              <label>Jelo
-                <select class="dish-select" name="jelo_2">
-                  <option value="">Odaberite jelo</option>
-                  <optgroup label="Pizze normal">
-                    <option value="Margarita normal - 6,50 €">Margarita normal</option>
-                    <option value="Fungi normal - 7,00 €">Fungi normal</option>
-                    <option value="Capricciosa normal - 8,00 €">Capricciosa normal</option>
-                    <option value="Slavonska normal - 9,00 €">Slavonska normal</option>
-                    <option value="Vezuvio normal - 7,50 €">Vezuvio normal</option>
-                    <option value="Vegetarijana normal - 8,50 €">Vegetarijana normal</option>
-                    <option value="Meksikana normal - 9,00 €">Meksikana normal</option>
-                    <option value="Kod Kuma normal - 10,00 €">Kod Kuma normal</option>
-                    <option value="Pastirska normal - 11,00 €">Pastirska normal</option>
-                    <option value="Pigalo normal - 9,50 €">Pigalo normal</option>
-                    <option value="Pršut rikola normal - 9,50 €">Pršut rikola normal</option>
-                    <option value="Bijela normal - 9,50 €">Bijela normal</option>
-                    <option value="Piletina grill normal - 8,50 €">Piletina grill normal</option>
-                    <option value="Tuna normal - 8,50 €">Tuna normal</option>
-                    <option value="Frutti di mare normal - 10,00 €">Frutti di mare normal</option>
-                    <option value="Quattro Formaggi normal - 8,00 €">Quattro Formaggi normal</option>
-                    <option value="Baranjska ruža normal - 13,50 €">Baranjska ruža normal</option>
-                    <option value="Chef normal - 12,50 €">Chef normal</option>
-                    <option value="Gurmanska normal - 12,00 €">Gurmanska normal</option>
-                    <option value="Olimpik normal - 10,50 €">Olimpik normal</option>
-                  </optgroup>
-                  <optgroup label="Pizze jumbo">
-                    <option value="Margarita jumbo - 12,50 €">Margarita jumbo</option>
-                    <option value="Fungi jumbo - 13,00 €">Fungi jumbo</option>
-                    <option value="Capricciosa jumbo - 14,50 €">Capricciosa jumbo</option>
-                    <option value="Slavonska jumbo - 17,00 €">Slavonska jumbo</option>
-                    <option value="Vezuvio jumbo - 14,00 €">Vezuvio jumbo</option>
-                    <option value="Vegetarijana jumbo - 16,00 €">Vegetarijana jumbo</option>
-                    <option value="Meksikana jumbo - 18,00 €">Meksikana jumbo</option>
-                    <option value="Kod Kuma jumbo - 19,00 €">Kod Kuma jumbo</option>
-                    <option value="Pastirska jumbo - 19,50 €">Pastirska jumbo</option>
-                    <option value="Pigalo jumbo - 18,00 €">Pigalo jumbo</option>
-                    <option value="Pršut rikola jumbo - 16,00 €">Pršut rikola jumbo</option>
-                    <option value="Bijela jumbo - 17,50 €">Bijela jumbo</option>
-                    <option value="Piletina grill jumbo - 16,00 €">Piletina grill jumbo</option>
-                    <option value="Tuna jumbo - 15,00 €">Tuna jumbo</option>
-                    <option value="Frutti di mare jumbo - 19,00 €">Frutti di mare jumbo</option>
-                    <option value="Quattro Formaggi jumbo - 16,00 €">Quattro Formaggi jumbo</option>
-                    <option value="Baranjska ruža jumbo - 25,50 €">Baranjska ruža jumbo</option>
-                    <option value="Chef jumbo - 24,50 €">Chef jumbo</option>
-                    <option value="Gurmanska jumbo - 24,00 €">Gurmanska jumbo</option>
-                    <option value="Olimpik jumbo - 21,00 €">Olimpik jumbo</option>
-                  </optgroup>
-                  <optgroup label="Sendviči">
-                    <option value="Sendvič Piletina - 7,50 €">Sendvič Piletina</option>
-                    <option value="Sendvič Suhi vrat - 7,00 €">Sendvič Suhi vrat</option>
-                    <option value="Sendvič Kulen - 7,00 €">Sendvič Kulen</option>
-                    <option value="Sendvič Pršut - 7,50 €">Sendvič Pršut</option>
-                    <option value="Sendvič Šunka - 6,00 €">Sendvič Šunka</option>
-                  </optgroup>
-                  <optgroup label="Predjela">
-                    <option data-new="true" value="Mazalice (6 kom) - 8,50 €">Mazalice (6 kom) · 8,50 €</option>
-                    <option data-new="true" value="Pohana paprika punjena sirom - 8,90 €">Pohana paprika punjena sirom · 8,90 €</option>
-                  </optgroup>
-                  <optgroup label="Burgeri">
-                    <option data-new="true" value="Burger Kod Kuma - 9,90 €">Burger Kod Kuma · 9,90 €</option>
-                    <option data-new="true" value="Burger Pul Pork - 9,90 €">Burger Pul Pork · 9,90 €</option>
-                  </optgroup>
-                  <optgroup label="Pohana jela">
-                    <option data-new="true" value="Bečka svinjska šnicla - 10,50 €">Bečka svinjska šnicla · 10,50 €</option>
-                    <option data-new="true" value="Pileći prutići u sezamu - 10,50 €">Pileći prutići u sezamu · 10,50 €</option>
-                    <option data-new="true" value="Odrezak Kod Kuma - 13,50 €">Odrezak Kod Kuma · 13,50 €</option>
-                  </optgroup>
-                  <optgroup label="Glavna jela">
-                    <option data-new="true" value="Gurmanska pljeskavica - 12,50 €">Gurmanska pljeskavica · 12,50 €</option>
-                    <option data-new="true" value="Ćevapi mali u lepinji (5 kom) - 7,00 €">Ćevapi mali u lepinji (5 kom) · 7,00 €</option>
-                    <option data-new="true" value="Ćevapi veliki u lepinji (10 kom) - 10,50 €">Ćevapi veliki u lepinji (10 kom) · 10,50 €</option>
-                    <option data-new="true" value="Pileći uštipci (8 kom) - 9,50 €">Pileći uštipci (8 kom) · 9,50 €</option>
-                    <option data-new="true" value="Punjena vješalica - 12,90 €">Punjena vješalica · 12,90 €</option>
-                    <option data-new="true" value="Smazalica - 13,50 €">Smazalica · 13,50 €</option>
-                    <option data-new="true" value="Otkošteni batak / zabatak - 10,50 €">Otkošteni batak / zabatak · 10,50 €</option>
-                    <option data-new="true" value="Svinjski vrat sa žara - 10,50 €">Svinjski vrat sa žara · 10,50 €</option>
-                  </optgroup>
-                  <optgroup label="Plate">
-                    <option data-new="true" value="Plata Kod Kuma za 2 osobe - 32,00 €">Plata Kod Kuma za 2 osobe · 32,00 €</option>
-                  </optgroup>
-                  <optgroup label="Prilozi">
-                    <option data-new="true" value="Pekarski krumpir - 3,50 €">Pekarski krumpir · 3,50 €</option>
-                    <option data-new="true" value="Pommes - 2,50 €">Pommes · 2,50 €</option>
-                    <option data-new="true" value="Gljive sa žara - 3,50 €">Gljive sa žara · 3,50 €</option>
-                    <option data-new="true" value="Grilano povrće - 4,50 €">Grilano povrće · 4,50 €</option>
-                    <option data-new="true" value="Lepinja - 4,00 €">Lepinja · 4,00 €</option>
-                  </optgroup>
-                  <optgroup label="Umaci">
-                    <option data-new="true" value="Tartar umak - 2,50 €">Tartar umak · 2,50 €</option>
-                    <option data-new="true" value="Majoneza - 2,00 €">Majoneza · 2,00 €</option>
-                    <option data-new="true" value="Kečap - 2,00 €">Kečap · 2,00 €</option>
-                    <option data-new="true" value="Kiselo vrhnje - 2,00 €">Kiselo vrhnje · 2,00 €</option>
-                  </optgroup>
-                  <optgroup label="Salate">
-                    <option data-new="true" value="Zelena salata - 3,00 €">Zelena salata · 3,00 €</option>
-                    <option data-new="true" value="Rajčica s lukom - 3,50 €">Rajčica s lukom · 3,50 €</option>
-                    <option data-new="true" value="Krastavci s kiselim vrhnjem - 3,50 €">Krastavci s kiselim vrhnjem · 3,50 €</option>
-                    <option data-new="true" value="Kupus salata - 3,00 €">Kupus salata · 3,00 €</option>
-                    <option data-new="true" value="Šopska salata - 4,00 €">Šopska salata · 4,00 €</option>
-                    <option data-new="true" value="Miješana sezonska salata - 3,50 €">Miješana sezonska salata · 3,50 €</option>
-                    <option data-new="true" value="Pečena paprika - 4,00 €">Pečena paprika · 4,00 €</option>
-                  </optgroup>
-
-
-                </select>
-              </label>
-              <label>Količina
-                <input class="dish-qty" type="number" name="kolicina_2" min="0" max="20" value="0">
-              </label>
-            </div>
-
-            <div class="order-row">
-              <label>Jelo
-                <select class="dish-select" name="jelo_3">
-                  <option value="">Odaberite jelo</option>
-                  <optgroup label="Pizze normal">
-                    <option value="Margarita normal - 6,50 €">Margarita normal</option>
-                    <option value="Fungi normal - 7,00 €">Fungi normal</option>
-                    <option value="Capricciosa normal - 8,00 €">Capricciosa normal</option>
-                    <option value="Slavonska normal - 9,00 €">Slavonska normal</option>
-                    <option value="Vezuvio normal - 7,50 €">Vezuvio normal</option>
-                    <option value="Vegetarijana normal - 8,50 €">Vegetarijana normal</option>
-                    <option value="Meksikana normal - 9,00 €">Meksikana normal</option>
-                    <option value="Kod Kuma normal - 10,00 €">Kod Kuma normal</option>
-                    <option value="Pastirska normal - 11,00 €">Pastirska normal</option>
-                    <option value="Pigalo normal - 9,50 €">Pigalo normal</option>
-                    <option value="Pršut rikola normal - 9,50 €">Pršut rikola normal</option>
-                    <option value="Bijela normal - 9,50 €">Bijela normal</option>
-                    <option value="Piletina grill normal - 8,50 €">Piletina grill normal</option>
-                    <option value="Tuna normal - 8,50 €">Tuna normal</option>
-                    <option value="Frutti di mare normal - 10,00 €">Frutti di mare normal</option>
-                    <option value="Quattro Formaggi normal - 8,00 €">Quattro Formaggi normal</option>
-                    <option value="Baranjska ruža normal - 13,50 €">Baranjska ruža normal</option>
-                    <option value="Chef normal - 12,50 €">Chef normal</option>
-                    <option value="Gurmanska normal - 12,00 €">Gurmanska normal</option>
-                    <option value="Olimpik normal - 10,50 €">Olimpik normal</option>
-                  </optgroup>
-                  <optgroup label="Pizze jumbo">
-                    <option value="Margarita jumbo - 12,50 €">Margarita jumbo</option>
-                    <option value="Fungi jumbo - 13,00 €">Fungi jumbo</option>
-                    <option value="Capricciosa jumbo - 14,50 €">Capricciosa jumbo</option>
-                    <option value="Slavonska jumbo - 17,00 €">Slavonska jumbo</option>
-                    <option value="Vezuvio jumbo - 14,00 €">Vezuvio jumbo</option>
-                    <option value="Vegetarijana jumbo - 16,00 €">Vegetarijana jumbo</option>
-                    <option value="Meksikana jumbo - 18,00 €">Meksikana jumbo</option>
-                    <option value="Kod Kuma jumbo - 19,00 €">Kod Kuma jumbo</option>
-                    <option value="Pastirska jumbo - 19,50 €">Pastirska jumbo</option>
-                    <option value="Pigalo jumbo - 18,00 €">Pigalo jumbo</option>
-                    <option value="Pršut rikola jumbo - 16,00 €">Pršut rikola jumbo</option>
-                    <option value="Bijela jumbo - 17,50 €">Bijela jumbo</option>
-                    <option value="Piletina grill jumbo - 16,00 €">Piletina grill jumbo</option>
-                    <option value="Tuna jumbo - 15,00 €">Tuna jumbo</option>
-                    <option value="Frutti di mare jumbo - 19,00 €">Frutti di mare jumbo</option>
-                    <option value="Quattro Formaggi jumbo - 16,00 €">Quattro Formaggi jumbo</option>
-                    <option value="Baranjska ruža jumbo - 25,50 €">Baranjska ruža jumbo</option>
-                    <option value="Chef jumbo - 24,50 €">Chef jumbo</option>
-                    <option value="Gurmanska jumbo - 24,00 €">Gurmanska jumbo</option>
-                    <option value="Olimpik jumbo - 21,00 €">Olimpik jumbo</option>
-                  </optgroup>
-                  <optgroup label="Sendviči">
-                    <option value="Sendvič Piletina - 7,50 €">Sendvič Piletina</option>
-                    <option value="Sendvič Suhi vrat - 7,00 €">Sendvič Suhi vrat</option>
-                    <option value="Sendvič Kulen - 7,00 €">Sendvič Kulen</option>
-                    <option value="Sendvič Pršut - 7,50 €">Sendvič Pršut</option>
-                    <option value="Sendvič Šunka - 6,00 €">Sendvič Šunka</option>
-                  </optgroup>
-                  <optgroup label="Predjela">
-                    <option data-new="true" value="Mazalice (6 kom) - 8,50 €">Mazalice (6 kom) · 8,50 €</option>
-                    <option data-new="true" value="Pohana paprika punjena sirom - 8,90 €">Pohana paprika punjena sirom · 8,90 €</option>
-                  </optgroup>
-                  <optgroup label="Burgeri">
-                    <option data-new="true" value="Burger Kod Kuma - 9,90 €">Burger Kod Kuma · 9,90 €</option>
-                    <option data-new="true" value="Burger Pul Pork - 9,90 €">Burger Pul Pork · 9,90 €</option>
-                  </optgroup>
-                  <optgroup label="Pohana jela">
-                    <option data-new="true" value="Bečka svinjska šnicla - 10,50 €">Bečka svinjska šnicla · 10,50 €</option>
-                    <option data-new="true" value="Pileći prutići u sezamu - 10,50 €">Pileći prutići u sezamu · 10,50 €</option>
-                    <option data-new="true" value="Odrezak Kod Kuma - 13,50 €">Odrezak Kod Kuma · 13,50 €</option>
-                  </optgroup>
-                  <optgroup label="Glavna jela">
-                    <option data-new="true" value="Gurmanska pljeskavica - 12,50 €">Gurmanska pljeskavica · 12,50 €</option>
-                    <option data-new="true" value="Ćevapi mali u lepinji (5 kom) - 7,00 €">Ćevapi mali u lepinji (5 kom) · 7,00 €</option>
-                    <option data-new="true" value="Ćevapi veliki u lepinji (10 kom) - 10,50 €">Ćevapi veliki u lepinji (10 kom) · 10,50 €</option>
-                    <option data-new="true" value="Pileći uštipci (8 kom) - 9,50 €">Pileći uštipci (8 kom) · 9,50 €</option>
-                    <option data-new="true" value="Punjena vješalica - 12,90 €">Punjena vješalica · 12,90 €</option>
-                    <option data-new="true" value="Smazalica - 13,50 €">Smazalica · 13,50 €</option>
-                    <option data-new="true" value="Otkošteni batak / zabatak - 10,50 €">Otkošteni batak / zabatak · 10,50 €</option>
-                    <option data-new="true" value="Svinjski vrat sa žara - 10,50 €">Svinjski vrat sa žara · 10,50 €</option>
-                  </optgroup>
-                  <optgroup label="Plate">
-                    <option data-new="true" value="Plata Kod Kuma za 2 osobe - 32,00 €">Plata Kod Kuma za 2 osobe · 32,00 €</option>
-                  </optgroup>
-                  <optgroup label="Prilozi">
-                    <option data-new="true" value="Pekarski krumpir - 3,50 €">Pekarski krumpir · 3,50 €</option>
-                    <option data-new="true" value="Pommes - 2,50 €">Pommes · 2,50 €</option>
-                    <option data-new="true" value="Gljive sa žara - 3,50 €">Gljive sa žara · 3,50 €</option>
-                    <option data-new="true" value="Grilano povrće - 4,50 €">Grilano povrće · 4,50 €</option>
-                    <option data-new="true" value="Lepinja - 4,00 €">Lepinja · 4,00 €</option>
-                  </optgroup>
-                  <optgroup label="Umaci">
-                    <option data-new="true" value="Tartar umak - 2,50 €">Tartar umak · 2,50 €</option>
-                    <option data-new="true" value="Majoneza - 2,00 €">Majoneza · 2,00 €</option>
-                    <option data-new="true" value="Kečap - 2,00 €">Kečap · 2,00 €</option>
-                    <option data-new="true" value="Kiselo vrhnje - 2,00 €">Kiselo vrhnje · 2,00 €</option>
-                  </optgroup>
-                  <optgroup label="Salate">
-                    <option data-new="true" value="Zelena salata - 3,00 €">Zelena salata · 3,00 €</option>
-                    <option data-new="true" value="Rajčica s lukom - 3,50 €">Rajčica s lukom · 3,50 €</option>
-                    <option data-new="true" value="Krastavci s kiselim vrhnjem - 3,50 €">Krastavci s kiselim vrhnjem · 3,50 €</option>
-                    <option data-new="true" value="Kupus salata - 3,00 €">Kupus salata · 3,00 €</option>
-                    <option data-new="true" value="Šopska salata - 4,00 €">Šopska salata · 4,00 €</option>
-                    <option data-new="true" value="Miješana sezonska salata - 3,50 €">Miješana sezonska salata · 3,50 €</option>
-                    <option data-new="true" value="Pečena paprika - 4,00 €">Pečena paprika · 4,00 €</option>
-                  </optgroup>
-
-
-                </select>
-              </label>
-              <label>Količina
-                <input class="dish-qty" type="number" name="kolicina_3" min="0" max="20" value="0">
-              </label>
-            </div>
-
-            <div class="order-row">
-              <label>Jelo
-                <select class="dish-select" name="jelo_4">
-                  <option value="">Odaberite jelo</option>
-                  <optgroup label="Pizze normal">
-                    <option value="Margarita normal - 6,50 €">Margarita normal</option>
-                    <option value="Fungi normal - 7,00 €">Fungi normal</option>
-                    <option value="Capricciosa normal - 8,00 €">Capricciosa normal</option>
-                    <option value="Slavonska normal - 9,00 €">Slavonska normal</option>
-                    <option value="Vezuvio normal - 7,50 €">Vezuvio normal</option>
-                    <option value="Vegetarijana normal - 8,50 €">Vegetarijana normal</option>
-                    <option value="Meksikana normal - 9,00 €">Meksikana normal</option>
-                    <option value="Kod Kuma normal - 10,00 €">Kod Kuma normal</option>
-                    <option value="Pastirska normal - 11,00 €">Pastirska normal</option>
-                    <option value="Pigalo normal - 9,50 €">Pigalo normal</option>
-                    <option value="Pršut rikola normal - 9,50 €">Pršut rikola normal</option>
-                    <option value="Bijela normal - 9,50 €">Bijela normal</option>
-                    <option value="Piletina grill normal - 8,50 €">Piletina grill normal</option>
-                    <option value="Tuna normal - 8,50 €">Tuna normal</option>
-                    <option value="Frutti di mare normal - 10,00 €">Frutti di mare normal</option>
-                    <option value="Quattro Formaggi normal - 8,00 €">Quattro Formaggi normal</option>
-                    <option value="Baranjska ruža normal - 13,50 €">Baranjska ruža normal</option>
-                    <option value="Chef normal - 12,50 €">Chef normal</option>
-                    <option value="Gurmanska normal - 12,00 €">Gurmanska normal</option>
-                    <option value="Olimpik normal - 10,50 €">Olimpik normal</option>
-                  </optgroup>
-                  <optgroup label="Pizze jumbo">
-                    <option value="Margarita jumbo - 12,50 €">Margarita jumbo</option>
-                    <option value="Fungi jumbo - 13,00 €">Fungi jumbo</option>
-                    <option value="Capricciosa jumbo - 14,50 €">Capricciosa jumbo</option>
-                    <option value="Slavonska jumbo - 17,00 €">Slavonska jumbo</option>
-                    <option value="Vezuvio jumbo - 14,00 €">Vezuvio jumbo</option>
-                    <option value="Vegetarijana jumbo - 16,00 €">Vegetarijana jumbo</option>
-                    <option value="Meksikana jumbo - 18,00 €">Meksikana jumbo</option>
-                    <option value="Kod Kuma jumbo - 19,00 €">Kod Kuma jumbo</option>
-                    <option value="Pastirska jumbo - 19,50 €">Pastirska jumbo</option>
-                    <option value="Pigalo jumbo - 18,00 €">Pigalo jumbo</option>
-                    <option value="Pršut rikola jumbo - 16,00 €">Pršut rikola jumbo</option>
-                    <option value="Bijela jumbo - 17,50 €">Bijela jumbo</option>
-                    <option value="Piletina grill jumbo - 16,00 €">Piletina grill jumbo</option>
-                    <option value="Tuna jumbo - 15,00 €">Tuna jumbo</option>
-                    <option value="Frutti di mare jumbo - 19,00 €">Frutti di mare jumbo</option>
-                    <option value="Quattro Formaggi jumbo - 16,00 €">Quattro Formaggi jumbo</option>
-                    <option value="Baranjska ruža jumbo - 25,50 €">Baranjska ruža jumbo</option>
-                    <option value="Chef jumbo - 24,50 €">Chef jumbo</option>
-                    <option value="Gurmanska jumbo - 24,00 €">Gurmanska jumbo</option>
-                    <option value="Olimpik jumbo - 21,00 €">Olimpik jumbo</option>
-                  </optgroup>
-                  <optgroup label="Sendviči">
-                    <option value="Sendvič Piletina - 7,50 €">Sendvič Piletina</option>
-                    <option value="Sendvič Suhi vrat - 7,00 €">Sendvič Suhi vrat</option>
-                    <option value="Sendvič Kulen - 7,00 €">Sendvič Kulen</option>
-                    <option value="Sendvič Pršut - 7,50 €">Sendvič Pršut</option>
-                    <option value="Sendvič Šunka - 6,00 €">Sendvič Šunka</option>
-                  </optgroup>
-                  <optgroup label="Predjela">
-                    <option data-new="true" value="Mazalice (6 kom) - 8,50 €">Mazalice (6 kom) · 8,50 €</option>
-                    <option data-new="true" value="Pohana paprika punjena sirom - 8,90 €">Pohana paprika punjena sirom · 8,90 €</option>
-                  </optgroup>
-                  <optgroup label="Burgeri">
-                    <option data-new="true" value="Burger Kod Kuma - 9,90 €">Burger Kod Kuma · 9,90 €</option>
-                    <option data-new="true" value="Burger Pul Pork - 9,90 €">Burger Pul Pork · 9,90 €</option>
-                  </optgroup>
-                  <optgroup label="Pohana jela">
-                    <option data-new="true" value="Bečka svinjska šnicla - 10,50 €">Bečka svinjska šnicla · 10,50 €</option>
-                    <option data-new="true" value="Pileći prutići u sezamu - 10,50 €">Pileći prutići u sezamu · 10,50 €</option>
-                    <option data-new="true" value="Odrezak Kod Kuma - 13,50 €">Odrezak Kod Kuma · 13,50 €</option>
-                  </optgroup>
-                  <optgroup label="Glavna jela">
-                    <option data-new="true" value="Gurmanska pljeskavica - 12,50 €">Gurmanska pljeskavica · 12,50 €</option>
-                    <option data-new="true" value="Ćevapi mali u lepinji (5 kom) - 7,00 €">Ćevapi mali u lepinji (5 kom) · 7,00 €</option>
-                    <option data-new="true" value="Ćevapi veliki u lepinji (10 kom) - 10,50 €">Ćevapi veliki u lepinji (10 kom) · 10,50 €</option>
-                    <option data-new="true" value="Pileći uštipci (8 kom) - 9,50 €">Pileći uštipci (8 kom) · 9,50 €</option>
-                    <option data-new="true" value="Punjena vješalica - 12,90 €">Punjena vješalica · 12,90 €</option>
-                    <option data-new="true" value="Smazalica - 13,50 €">Smazalica · 13,50 €</option>
-                    <option data-new="true" value="Otkošteni batak / zabatak - 10,50 €">Otkošteni batak / zabatak · 10,50 €</option>
-                    <option data-new="true" value="Svinjski vrat sa žara - 10,50 €">Svinjski vrat sa žara · 10,50 €</option>
-                  </optgroup>
-                  <optgroup label="Plate">
-                    <option data-new="true" value="Plata Kod Kuma za 2 osobe - 32,00 €">Plata Kod Kuma za 2 osobe · 32,00 €</option>
-                  </optgroup>
-                  <optgroup label="Prilozi">
-                    <option data-new="true" value="Pekarski krumpir - 3,50 €">Pekarski krumpir · 3,50 €</option>
-                    <option data-new="true" value="Pommes - 2,50 €">Pommes · 2,50 €</option>
-                    <option data-new="true" value="Gljive sa žara - 3,50 €">Gljive sa žara · 3,50 €</option>
-                    <option data-new="true" value="Grilano povrće - 4,50 €">Grilano povrće · 4,50 €</option>
-                    <option data-new="true" value="Lepinja - 4,00 €">Lepinja · 4,00 €</option>
-                  </optgroup>
-                  <optgroup label="Umaci">
-                    <option data-new="true" value="Tartar umak - 2,50 €">Tartar umak · 2,50 €</option>
-                    <option data-new="true" value="Majoneza - 2,00 €">Majoneza · 2,00 €</option>
-                    <option data-new="true" value="Kečap - 2,00 €">Kečap · 2,00 €</option>
-                    <option data-new="true" value="Kiselo vrhnje - 2,00 €">Kiselo vrhnje · 2,00 €</option>
-                  </optgroup>
-                  <optgroup label="Salate">
-                    <option data-new="true" value="Zelena salata - 3,00 €">Zelena salata · 3,00 €</option>
-                    <option data-new="true" value="Rajčica s lukom - 3,50 €">Rajčica s lukom · 3,50 €</option>
-                    <option data-new="true" value="Krastavci s kiselim vrhnjem - 3,50 €">Krastavci s kiselim vrhnjem · 3,50 €</option>
-                    <option data-new="true" value="Kupus salata - 3,00 €">Kupus salata · 3,00 €</option>
-                    <option data-new="true" value="Šopska salata - 4,00 €">Šopska salata · 4,00 €</option>
-                    <option data-new="true" value="Miješana sezonska salata - 3,50 €">Miješana sezonska salata · 3,50 €</option>
-                    <option data-new="true" value="Pečena paprika - 4,00 €">Pečena paprika · 4,00 €</option>
-                  </optgroup>
-
-
-                </select>
-              </label>
-              <label>Količina
-                <input class="dish-qty" type="number" name="kolicina_4" min="0" max="20" value="0">
-              </label>
-            </div>
-
-            <button class="btn ghost add-dish-btn" type="button" id="add-dish">+ Dodaj jelo</button>
-
-            <div class="order-total-box">
-              <span>Ukupno za platiti</span>
-              <div class="order-total-values"><strong id="order-total">0 €</strong><small id="order-total-reference">10.09.2026.: 0 €</small></div>
-            </div>
-
-            <input type="hidden" id="narudzba-summary" name="narudzba" value="">
-            <input type="hidden" id="narudzba-total" name="ukupna_cijena" value="0 €">
           </div>
-
-          <label>Napomena
-            <textarea name="napomena" placeholder="Posebne želje, alergije, pribor, način plaćanja..."></textarea>
-          </label>
-
-          <button class="btn primary" type="submit" id="order-submit">Pošalji narudžbu</button>
-          <div class="order-form-status" id="order-form-status" role="status" aria-live="polite"></div>
-        </form>
+          <div class="phone-order-final-card">
+            <span>SPREMNI ZA NARUDŽBU?</span>
+            <h3>Jedan poziv je dovoljan.</h3>
+            <a class="btn primary" href="tel:+385924605349">Nazovi +385 92 460 5349</a>
+            <a class="phone-order-menu-link" href="jelovnik.html">Prvo pogledaj jelovnik <span aria-hidden="true">↗</span></a>
+          </div>
+        </div>
       </div>
     </section>
   </main>
@@ -550,29 +83,20 @@
   <footer class="footer">
     <div class="container footer-grid">
       <div><a class="logo" href="index.html">Kod Kuma<span>.</span></a><p>Dostava i osobno preuzimanje u Vukovaru. Konzumacija hrane u objektu nije dostupna.</p></div>
-      <div><h4>Kontakt</h4><p>+385 92 460 5349<br>pizzakodkuma@gmail.com</p></div>
+      <div><h4>Kontakt</h4><p><a href="tel:+385924605349">+385 92 460 5349</a><br><a href="mailto:pizzakodkuma@gmail.com">pizzakodkuma@gmail.com</a></p></div>
       <div><h4>Radno vrijeme</h4><p>Ponedjeljak: zatvoreno<br>Utorak – petak: 14:00 – 22:00<br>Subota – nedjelja: 10:00 – 22:00</p></div>
-    <div><h4>Pravno</h4><p class="footer-legal"><a href="politika-privatnosti.html">Politika privatnosti</a><a href="politika-kolacica.html">Politika kolačića</a></p></div></div>
+      <div><h4>Pravno</h4><p class="footer-legal"><a href="politika-privatnosti.html">Politika privatnosti</a><a href="politika-kolacica.html">Politika kolačića</a></p></div>
+    </div>
   </footer>
 
   <script src="assets/js/main.js"></script>
-
   <div class="cookie-banner" role="dialog" aria-live="polite" aria-label="Postavke kolačića">
     <h3>Koristimo kolačiće</h3>
     <p>Ova web stranica koristi nužne kolačiće za ispravan rad, a uz vašu privolu možemo koristiti i analitičke/marketinške kolačiće za poboljšanje sadržaja i oglašavanja. Više pročitajte u <a href="politika-privatnosti.html">Politici privatnosti</a> i <a href="politika-kolacica.html">Politici kolačića</a>.</p>
     <div class="cookie-panel">
-      <label class="cookie-option">
-        <span><strong>Nužni kolačići</strong><span>Uvijek aktivni jer omogućuju osnovni rad stranice.</span></span>
-        <input type="checkbox" checked disabled>
-      </label>
-      <label class="cookie-option">
-        <span><strong>Analitički kolačići</strong><span>Pomažu razumjeti posjećenost i poboljšati stranicu.</span></span>
-        <input id="cookie-analytics" type="checkbox">
-      </label>
-      <label class="cookie-option">
-        <span><strong>Marketinški kolačići</strong><span>Koriste se za oglašavanje i mjerenje kampanja, ako ih stranica koristi.</span></span>
-        <input id="cookie-marketing" type="checkbox">
-      </label>
+      <label class="cookie-option"><span><strong>Nužni kolačići</strong><span>Uvijek aktivni jer omogućuju osnovni rad stranice.</span></span><input type="checkbox" checked disabled></label>
+      <label class="cookie-option"><span><strong>Analitički kolačići</strong><span>Pomažu razumjeti posjećenost i poboljšati stranicu.</span></span><input id="cookie-analytics" type="checkbox"></label>
+      <label class="cookie-option"><span><strong>Marketinški kolačići</strong><span>Koriste se za oglašavanje i mjerenje kampanja, ako ih stranica koristi.</span></span><input id="cookie-marketing" type="checkbox"></label>
     </div>
     <div class="cookie-actions">
       <button class="cookie-btn accept" type="button" data-cookie-accept>Prihvati sve</button>
@@ -581,6 +105,5 @@
       <button class="cookie-btn settings" type="button" data-cookie-save>Spremi odabir</button>
     </div>
   </div>
-
 </body>
 </html>

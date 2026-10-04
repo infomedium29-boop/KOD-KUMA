@@ -625,3 +625,47 @@ body.opening-modal-active{
 .delivery-address-field{transition:opacity .2s ease}.delivery-address-field.is-hidden{display:none}.delivery-address-field small{font-size:10px;font-weight:500;color:#988873;margin-top:-2px}
 .contact-fulfilment{display:grid;gap:6px;margin-top:22px;padding:17px;border:1px solid rgba(255,207,134,.16);border-radius:17px;background:rgba(215,155,69,.06)}.contact-fulfilment strong{color:#f3d7aa}.contact-fulfilment span{font-size:12px;line-height:1.6;color:#ad9a82}.pickup-location{display:flex;flex-direction:column;align-items:center;text-align:center;gap:15px}.pickup-location>span{font-size:10px;font-weight:900;letter-spacing:.16em;color:var(--gold2)}.pickup-location>strong{font-family:'Playfair Display',serif;font-size:30px;line-height:1.25;color:#fff4e5}.pickup-location .btn{margin-top:5px}
 @media(max-width:760px){.fulfilment-inline{width:100%;flex-direction:column;align-items:flex-start;gap:10px}.fulfilment-inline-divider{width:100%;height:1px}.fulfilment-inline-item{white-space:normal}.fulfilment-strip{grid-template-columns:1fr;padding:18px}.fulfilment-strip-options{align-items:flex-start;flex-direction:column;gap:10px}.fulfilment-strip small{grid-column:auto}.order-fulfilment-notice{grid-template-columns:1fr;padding:20px}.order-fulfilment-icon{width:44px;height:44px}.pickup-location>strong{font-size:25px}}
+
+
+/* Telefonske narudžbe — online forma privremeno deaktivirana */
+.phone-order-page{background:var(--bg)}
+.phone-order-hero{position:relative;overflow:hidden;padding-bottom:96px}
+.phone-order-hero:before{content:"";position:absolute;width:520px;height:520px;border-radius:50%;right:-180px;top:-210px;background:radial-gradient(circle,rgba(255,207,134,.16),rgba(215,155,69,.03) 48%,transparent 70%);pointer-events:none}
+.phone-order-hero-inner{position:relative;display:grid;grid-template-columns:minmax(0,1.25fr) minmax(280px,.75fr);gap:70px;align-items:end}
+.phone-order-hero h1{font-size:clamp(58px,8.4vw,112px)}
+.phone-order-hero p:not(.eyebrow){max-width:720px}
+.phone-order-call{gap:10px}.phone-order-call-icon{font-size:18px;line-height:1}
+.phone-order-status{position:relative;padding:30px;border:1px solid rgba(255,207,134,.19);border-radius:28px;background:linear-gradient(155deg,rgba(215,155,69,.13),rgba(255,255,255,.035));box-shadow:0 28px 80px rgba(0,0,0,.25);overflow:hidden}
+.phone-order-status:after{content:"";position:absolute;width:130px;height:130px;border:1px solid rgba(255,207,134,.13);border-radius:50%;right:-45px;bottom:-50px}
+.phone-order-status-kicker{display:block;color:var(--gold2);font-size:10px;font-weight:900;letter-spacing:.15em;margin-bottom:20px}
+.phone-order-status>strong{display:block;font-family:'Playfair Display',serif;font-size:46px;letter-spacing:-.05em;color:#fff5e8}
+.phone-order-status>p{font-size:14px!important;line-height:1.7!important;margin:12px 0 18px!important;color:#d0bea5!important}
+.phone-order-status-line{height:1px;background:rgba(255,255,255,.1);margin-bottom:18px}
+.phone-order-status small{display:block;max-width:260px;color:#9f8c74;line-height:1.6}
+.phone-order-section{padding-top:92px}
+.phone-order-shell{display:grid;gap:54px}
+.phone-order-intro{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);column-gap:80px;align-items:end}
+.phone-order-intro .eyebrow,.phone-order-intro h2{grid-column:1}
+.phone-order-intro h2{font-size:clamp(42px,5.2vw,70px)}
+.phone-order-intro>p:last-child{grid-column:2;grid-row:1/3;color:var(--muted);font-size:18px;line-height:1.75;margin:0;max-width:510px}
+.phone-order-steps{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.phone-order-step{min-height:235px;display:flex;flex-direction:column;justify-content:space-between;padding:27px;border:1px solid rgba(255,255,255,.1);border-radius:25px;background:linear-gradient(160deg,rgba(255,255,255,.065),rgba(255,255,255,.025));transition:transform .25s ease,border-color .25s ease,background .25s ease}
+.phone-order-step:hover{transform:translateY(-4px);border-color:rgba(255,207,134,.24);background:linear-gradient(160deg,rgba(215,155,69,.095),rgba(255,255,255,.025))}
+.phone-order-step>span{color:var(--gold2);font-weight:900;font-size:12px;letter-spacing:.1em}
+.phone-order-step h3{font-family:'Playfair Display',serif;font-size:29px;letter-spacing:-.04em;margin:0 0 10px;color:#fff5e7}
+.phone-order-step p{margin:0;color:var(--muted);font-size:13px;line-height:1.7}
+.phone-order-bottom{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(310px,.85fr);gap:20px}
+.phone-order-hours,.phone-order-final-card{padding:34px;border-radius:28px;border:1px solid rgba(255,255,255,.1)}
+.phone-order-hours{background:linear-gradient(145deg,rgba(255,255,255,.055),rgba(255,255,255,.02))}
+.phone-order-hours h3,.phone-order-final-card h3{font-family:'Playfair Display',serif;font-size:clamp(34px,4vw,48px);letter-spacing:-.045em;margin:8px 0 26px}
+.phone-order-hours-grid{display:grid;gap:0}
+.phone-order-hours-grid>div{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:14px 0;border-bottom:1px solid rgba(255,255,255,.08)}
+.phone-order-hours-grid>div:last-child{border-bottom:0;padding-bottom:0}
+.phone-order-hours-grid span{color:#ad9b84;font-size:13px}.phone-order-hours-grid strong{color:#f4dfbd;font-size:13px;text-align:right}
+.phone-order-final-card{display:flex;flex-direction:column;align-items:flex-start;background:radial-gradient(circle at 100% 0,rgba(255,207,134,.12),transparent 44%),linear-gradient(145deg,#20160e,#120d09)}
+.phone-order-final-card>span{color:var(--gold2);font-size:10px;font-weight:900;letter-spacing:.15em}
+.phone-order-final-card .btn{width:100%;margin-top:auto}
+.phone-order-menu-link{margin-top:18px;padding-bottom:5px;border-bottom:1px solid rgba(255,207,134,.36);font-size:12px;font-weight:800;color:#efd7b1}
+.contact-phone-link{color:#f2d5a7;border-bottom:1px solid rgba(255,207,134,.28)}
+@media(max-width:900px){.phone-order-hero-inner{grid-template-columns:1fr;gap:34px;align-items:start}.phone-order-status{max-width:560px}.phone-order-intro{grid-template-columns:1fr;gap:18px}.phone-order-intro .eyebrow,.phone-order-intro h2,.phone-order-intro>p:last-child{grid-column:1;grid-row:auto}.phone-order-steps{grid-template-columns:1fr}.phone-order-step{min-height:180px}.phone-order-bottom{grid-template-columns:1fr}}
+@media(max-width:640px){.phone-order-hero{padding-bottom:64px}.phone-order-hero-inner{gap:26px}.phone-order-status{padding:24px;border-radius:23px}.phone-order-status>strong{font-size:39px}.phone-order-section{padding-top:70px}.phone-order-shell{gap:38px}.phone-order-step{min-height:160px;padding:23px;border-radius:22px}.phone-order-hours,.phone-order-final-card{padding:25px 22px;border-radius:23px}.phone-order-hours-grid>div{align-items:flex-start;flex-direction:column;gap:5px}.phone-order-hours-grid strong{text-align:left}}

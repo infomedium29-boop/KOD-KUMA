@@ -1,14 +1,21 @@
-KOD KUMA — Cloudflare Pages + Web3Forms online narudžbe
+KOD KUMA — Cloudflare Pages
 
-Online narudžbe idu kroz Cloudflare Pages Function: /api/order
-Web3Forms Access Key nije u HTML-u ni JavaScriptu.
+AKTIVNO STANJE — 04.10.2026.
+- Online narudžbe su privremeno deaktivirane.
+- Narudžbe se usmjeravaju na telefonski broj +385 92 460 5349.
+- Stranica narudzba.html ostaje aktivna kao profesionalna landing stranica za telefonske narudžbe, tako da postojeći/stari linkovi ne završavaju na 404 stranici.
+- /api/order je namjerno blokiran (HTTP 410), pa stara spremljena forma ne može poslati narudžbu.
 
-Cloudflare postavka:
-- Type: Secret
-- Name: WEB3FORMS_ACCESS_KEY
-- Value: Web3Forms Form Access Key
+PONOVNA AKTIVACIJA ONLINE NARUDŽBI
+Originalna online forma i Cloudflare Pages Function spremljene su u:
+/_online-order-backup/
 
-VAŽNO:
-- functions/api/order.js mora ostati u repozitoriju.
-- Web3Forms Redirect URL preporučeno je ostaviti praznim jer potvrdu prikazuje sam sajt.
-- Function sada ispravno tretira HTTP 200 i HTTP 303 kao uspješno slanje te ne proglašava HTML/redirect odgovor greškom.
+Datoteke:
+- narudzba-online-original.source.txt
+- order-api-original.source.txt
+- README-REAKTIVACIJA.txt
+
+assets/js/main.js i dalje sadrži postojeću logiku izračuna i slanja narudžbe, ali je neaktivna jer na javnoj stranici nema online forme.
+
+CLOUDFLARE / WEB3FORMS
+Ako se online narudžbe ponovno aktiviraju, postojeća Cloudflare postavka WEB3FORMS_ACCESS_KEY može se ponovno koristiti.
