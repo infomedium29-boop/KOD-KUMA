@@ -24,3 +24,12 @@ NOVO 13.11.2026.: Podstranice dnevni-meni.html i catering.html s ponudama iz PDF
 Navigacija azurirana na svim HTML stranicama, dodane kartice na naslovnicu i sitemap unosi.
 RADNO VRIJEME: PDF flajer i postojeci web navode razlicita vremena, zato se postojeci sati na webu nisu mijenjali; potvrditi s vlasnikom.
 Digitalni CSV/XML cjenik glavnog jelovnika nije mijenjan; nove ponude su zasebne i zahtijevaju potvrdu za eventualno uskladivanje evidencije.
+
+NOVO 13.11.2026.: PREMIUM UVODNA ANIMACIJA LOGOTIPA
+- Autentični zlatni Kod Kuma Pizza & Grill logotip preuzet je iz vlasnikovog flajera.
+- SVG konture iscrtavaju logo; izvorni znak se potom diskretno pojavi.
+- Intro traje približno 3 sekunde pri prvom otvaranju stranice u sesiji.
+- Za ostale podstranice i ponovna učitavanja u istoj sesiji intro se ne ponavlja.
+- Može se preskočiti klikom na Preskoči intro ili tipkom Escape.
+- Poštuje sistemsku postavku smanjenih animacija (reduced motion).
+- Ostatak sadržaja, cjenici i funkcionalnosti nisu mijenjani.

@@ -1,6 +1,22 @@
 <!doctype html>
 <html lang="hr">
 <head>
+<script>
+  // Prikaz animacije samo pri prvom posjetu tijekom ove sesije.
+  (function () {
+    try {
+      if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches &&
+          sessionStorage.getItem('kod-kuma-intro-v1') !== 'seen') {
+        document.documentElement.classList.add('kk-intro-active');
+        sessionStorage.setItem('kod-kuma-intro-v1', 'seen');
+      }
+    } catch (error) {
+      // Bez pohrane sesije stranica i dalje ostaje funkcionalna.
+    }
+  }());
+</script>
+<script src="assets/js/intro.js" defer></script>
+
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#0c0906">
@@ -18,6 +34,14 @@
   <meta property="og:url" content="https://kod-kuma.hr/dnevni-meni.html">
 </head>
 <body>
+<div class="kk-intro-overlay" aria-label="Kod Kuma – uvodna animacija">
+  <div class="kk-intro-art">
+    <img class="kk-intro-drawing" src="assets/img/kod-kuma-logo-trace.svg" width="966" height="769" alt="" fetchpriority="high">
+    <img class="kk-intro-original" src="assets/img/kod-kuma-logo.webp" width="966" height="769" alt="" fetchpriority="high">
+  </div>
+  <button class="kk-intro-skip" type="button">Preskoči intro</button>
+</div>
+
   <header class="site-header">
     <a class="logo" href="index.html">Kod Kuma<span>.</span></a>
     <button class="menu-toggle" type="button" aria-label="Otvori meni" aria-controls="primary-navigation" aria-expanded="false">☰</button>

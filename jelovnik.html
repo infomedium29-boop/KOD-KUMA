@@ -1,4 +1,28 @@
-<!doctype html><html lang="hr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Jelovnik – pizza, roštilj i burgeri | Restoran Kod Kuma</title><meta name="description" content="Otkrijte jelovnik Kod Kuma u Vukovaru. Predjela, burgeri, glavna jela, pizze, sendviči i prilozi dostupni su za dostavu ili osobno preuzimanje."><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet"><link rel="stylesheet" href="assets/css/style.css"><link rel="canonical" href="https://kod-kuma.hr/jelovnik.html"><link rel="alternate" type="text/csv" href="https://kod-kuma.hr/cjenici/restoran-Ulica_Kraljice_Jelene_32000_Vukovar-U-01_002_20261113_1542.csv"><link rel="alternate" type="application/xml" href="https://kod-kuma.hr/cjenici/restoran-Ulica_Kraljice_Jelene_32000_Vukovar-U-01_002_20261113_1542.xml"></head><body>
+<!doctype html><html lang="hr"><head>
+<script>
+  // Prikaz animacije samo pri prvom posjetu tijekom ove sesije.
+  (function () {
+    try {
+      if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches &&
+          sessionStorage.getItem('kod-kuma-intro-v1') !== 'seen') {
+        document.documentElement.classList.add('kk-intro-active');
+        sessionStorage.setItem('kod-kuma-intro-v1', 'seen');
+      }
+    } catch (error) {
+      // Bez pohrane sesije stranica i dalje ostaje funkcionalna.
+    }
+  }());
+</script>
+<script src="assets/js/intro.js" defer></script>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Jelovnik – pizza, roštilj i burgeri | Restoran Kod Kuma</title><meta name="description" content="Otkrijte jelovnik Kod Kuma u Vukovaru. Predjela, burgeri, glavna jela, pizze, sendviči i prilozi dostupni su za dostavu ili osobno preuzimanje."><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet"><link rel="stylesheet" href="assets/css/style.css"><link rel="canonical" href="https://kod-kuma.hr/jelovnik.html"><link rel="alternate" type="text/csv" href="https://kod-kuma.hr/cjenici/restoran-Ulica_Kraljice_Jelene_32000_Vukovar-U-01_002_20261113_1542.csv"><link rel="alternate" type="application/xml" href="https://kod-kuma.hr/cjenici/restoran-Ulica_Kraljice_Jelene_32000_Vukovar-U-01_002_20261113_1542.xml"></head><body>
+<div class="kk-intro-overlay" aria-label="Kod Kuma – uvodna animacija">
+  <div class="kk-intro-art">
+    <img class="kk-intro-drawing" src="assets/img/kod-kuma-logo-trace.svg" width="966" height="769" alt="" fetchpriority="high">
+    <img class="kk-intro-original" src="assets/img/kod-kuma-logo.webp" width="966" height="769" alt="" fetchpriority="high">
+  </div>
+  <button class="kk-intro-skip" type="button">Preskoči intro</button>
+</div>
+
 <header class="site-header"><a class="logo" href="index.html">Kod Kuma<span>.</span></a><button class="menu-toggle" type="button" aria-label="Otvori meni" aria-controls="primary-navigation" aria-expanded="false">☰</button><nav class="nav" id="primary-navigation" aria-label="Glavna navigacija">
       <a href="index.html">Početna</a>
       <a href="jelovnik.html" aria-current="page">Jelovnik</a>
