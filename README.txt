@@ -19,3 +19,8 @@ assets/js/main.js i dalje sadrži postojeću logiku izračuna i slanja narudžbe
 
 CLOUDFLARE / WEB3FORMS
 Ako se online narudžbe ponovno aktiviraju, postojeća Cloudflare postavka WEB3FORMS_ACCESS_KEY može se ponovno koristiti.
+
+NOVO 13.11.2026.: Podstranice dnevni-meni.html i catering.html s ponudama iz PDF flajera.
+Navigacija azurirana na svim HTML stranicama, dodane kartice na naslovnicu i sitemap unosi.
+RADNO VRIJEME: PDF flajer i postojeci web navode razlicita vremena, zato se postojeci sati na webu nisu mijenjali; potvrditi s vlasnikom.
+Digitalni CSV/XML cjenik glavnog jelovnika nije mijenjan; nove ponude su zasebne i zahtijevaju potvrdu za eventualno uskladivanje evidencije.

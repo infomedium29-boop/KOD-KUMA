@@ -1,6 +1,20 @@
 const menuBtn = document.querySelector('.menu-toggle');
 const nav = document.querySelector('.nav');
-if (menuBtn && nav) menuBtn.addEventListener('click', () => nav.classList.toggle('open'));
+if (menuBtn && nav) {
+  const setMenuOpen = (isOpen) => {
+    nav.classList.toggle('open', isOpen);
+    menuBtn.setAttribute('aria-expanded', String(isOpen));
+    menuBtn.setAttribute('aria-label', isOpen ? 'Zatvori meni' : 'Otvori meni');
+  };
+  menuBtn.addEventListener('click', () => setMenuOpen(!nav.classList.contains('open')));
+  nav.querySelectorAll('a').forEach(link => link.addEventListener('click', () => setMenuOpen(false)));
+  document.addEventListener('keydown', event => {
+    if (event.key === 'Escape' && nav.classList.contains('open')) {
+      setMenuOpen(false);
+      menuBtn.focus();
+    }
+  });
+}
 
 if (window.gsap && window.ScrollTrigger) {
   gsap.registerPlugin(ScrollTrigger);

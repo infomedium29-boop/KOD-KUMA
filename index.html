@@ -13,10 +13,12 @@
 <body>
   <header class="site-header">
     <a class="logo" href="index.html">Kod Kuma<span>.</span></a>
-    <button class="menu-toggle" aria-label="Otvori meni">☰</button>
-    <nav class="nav">
-      <a href="index.html">Početna</a>
+    <button class="menu-toggle" type="button" aria-label="Otvori meni" aria-controls="primary-navigation" aria-expanded="false">☰</button>
+    <nav class="nav" id="primary-navigation" aria-label="Glavna navigacija">
+      <a href="index.html" aria-current="page">Početna</a>
       <a href="jelovnik.html">Jelovnik</a>
+      <a href="dnevni-meni.html">Dnevni meni</a>
+      <a href="catering.html">Catering</a>
       <a href="o-nama.html">O nama</a>
       <a href="kontakt.html">Kontakt</a>
       <a class="nav-cta" href="tel:+385924605349" aria-label="Nazovi Kod Kuma za narudžbu">Nazovi</a>
@@ -116,6 +118,15 @@
           <p>Za dvije osobe, uz bogat izbor mesa i priloga — za dostavu ili preuzimanje.</p>
           <strong>32,00 €</strong>
           <a href="jelovnik.html#plate">Pogledajte sadržaj plate <span aria-hidden="true">↗</span></a>
+        </div>
+      </div>
+    </section>
+    <section class="home-offers section-padding" aria-labelledby="home-offers-title">
+      <div class="container">
+        <div class="home-offers-heading"><div><p class="eyebrow">Još iz naše kuhinje</p><h2 id="home-offers-title">Za svaki dan.<br>Za posebne trenutke.</h2></div><p>Uz poznate favorite iz jelovnika, pogledajte i naše dnevne specijalitete te catering ponudu.</p></div>
+        <div class="home-offers-grid">
+          <a class="home-offer-card home-offer-daily" href="dnevni-meni.html"><span class="home-offer-type">01 / DNEVNI MENI</span><div><h3>Domaća kuhinja svaki dan.</h3><p>Od utorka do subote, dnevni meni za 7,00 €.</p><span class="home-offer-link">Pogledajte dnevni meni <b aria-hidden="true">↗</b></span></div></a>
+          <a class="home-offer-card home-offer-catering" href="catering.html"><span class="home-offer-type">02 / CATERING</span><div><h3>Okusi za vaše društvo.</h3><p>Finger food, kanapei i roštilj. Paketi od 15 € po osobi.</p><span class="home-offer-link">Istražite catering <b aria-hidden="true">↗</b></span></div></a>
         </div>
       </div>
     </section>
