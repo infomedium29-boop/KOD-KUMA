@@ -22,7 +22,11 @@ Ako se online narudžbe ponovno aktiviraju, postojeća Cloudflare postavka WEB3F
 
 NOVO 13.11.2026.: Podstranice dnevni-meni.html i catering.html s ponudama iz PDF flajera.
 Navigacija azurirana na svim HTML stranicama, dodane kartice na naslovnicu i sitemap unosi.
-RADNO VRIJEME: PDF flajer i postojeci web navode razlicita vremena, zato se postojeci sati na webu nisu mijenjali; potvrditi s vlasnikom.
+RADNO VRIJEME — POTVRĐENO OD VLASNIKA 23.11.2026.:
+- Ponedjeljak: zatvoreno.
+- Utorak – subota: 09:00 – 13:00 i 17:00 – 21:00.
+- Nedjelja: 12:00 – 21:00.
+Ažurirano na svim javnim stranicama, u predlošku online narudžbe i u strukturiranim podacima početne stranice.
 Digitalni CSV/XML cjenik glavnog jelovnika nije mijenjan; nove ponude su zasebne i zahtijevaju potvrdu za eventualno uskladivanje evidencije.
 
 NOVO 13.11.2026.: PREMIUM UVODNA ANIMACIJA LOGOTIPA

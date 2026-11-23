@@ -840,3 +840,29 @@ html.kk-intro-active .kk-intro-overlay{display:grid;animation:kk-intro-exit .6s 
 @keyframes kk-intro-exit{0%{opacity:1;visibility:visible}99%{opacity:0;visibility:visible}100%{opacity:0;visibility:hidden;pointer-events:none}}
 @media(max-width:480px){.kk-intro-art{width:min(325px,83vw)}.kk-intro-skip{right:16px;bottom:24px}}
 @media(prefers-reduced-motion:reduce){html.kk-intro-active .kk-intro-overlay{display:none!important}html.kk-intro-active{overflow:auto!important}}
+
+
+/* Kod Kuma — jasno prikazano dvokratno radno vrijeme (23.11.2026.) */
+.hours-schedule{display:grid;gap:12px;margin:10px 0 0}
+.hours-schedule-row{display:flex;align-items:baseline;justify-content:space-between;flex-wrap:wrap;gap:4px 12px}
+.hours-schedule-day{font-size:13px;line-height:1.6;color:var(--muted);font-weight:600}
+.hours-schedule-time{font-size:13px;line-height:1.6;color:#f4dfbd;font-weight:700;text-align:right}
+.hours-schedule-closed{color:var(--muted);font-weight:500}
+.hours-time-pair{display:inline-flex;gap:5px 8px;align-items:center;justify-content:flex-end;flex-wrap:wrap}
+.hours-time-pair>span{white-space:nowrap}
+.hours-time-pair>.hours-sep{color:var(--muted);opacity:.8;font-weight:400}
+.footer .hours-schedule-row{display:block}
+.footer .hours-schedule-day,.footer .hours-schedule-time{display:block;text-align:left}
+.footer .hours-time-pair{display:flex;justify-content:flex-start}
+.contact-hours{margin:18px 0 0;padding-top:16px;border-top:1px solid var(--line)}
+.contact-hours h3{margin:0 0 14px;font:800 15px/1.4 Inter,system-ui,sans-serif;color:#fff}
+.contact-hours .hours-schedule{margin-top:0}
+.phone-order-hours-grid .phone-hours-two-shifts{display:inline-flex;flex-wrap:wrap;gap:4px 8px;justify-content:flex-end;align-items:center}
+.phone-order-hours-grid .phone-hours-two-shifts>span{white-space:nowrap;color:inherit;font-size:inherit}
+.phone-order-hours-grid .phone-hours-two-shifts>span[aria-hidden]{color:var(--muted);font-weight:400}
+@media(max-width:640px){
+  .contact-hours .hours-schedule-row{display:block}
+  .contact-hours .hours-schedule-time{display:block;text-align:left}
+  .contact-hours .hours-time-pair{justify-content:flex-start}
+  .phone-order-hours-grid .phone-hours-two-shifts{justify-content:flex-start}
+}
