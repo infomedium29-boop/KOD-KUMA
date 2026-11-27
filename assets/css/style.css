@@ -365,8 +365,8 @@ body.opening-modal-active{
 }
 .opening-modal h2{
   margin:0;
-  font-size:clamp(48px,8vw,82px);
-  line-height:.94;
+  font-size:clamp(38px,6.6vw,64px);
+  line-height:1.04;
   text-shadow:0 14px 48px rgba(0,0,0,.5);
 }
 .opening-modal-text{
@@ -415,10 +415,10 @@ body.opening-modal-active{
 }
 @media (max-width:640px){
   .opening-modal{padding:12px}
-  .opening-modal-card{min-height:min(680px,calc(100vh - 24px));border-radius:26px}
-  .opening-modal-content{width:calc(100% - 28px);padding:62px 10px 42px}
-  .opening-modal-logo{margin-bottom:36px}
-  .opening-modal h2{font-size:clamp(44px,15vw,68px)}
+  .opening-modal-card{min-height:min(520px,calc(100vh - 24px));max-height:calc(100vh - 24px);max-height:calc(100dvh - 24px);overflow-y:auto;border-radius:26px}
+  .opening-modal-content{width:calc(100% - 28px);padding:54px 8px 30px}
+  .opening-modal-logo{margin-bottom:24px}
+  .opening-modal h2{font-size:clamp(32px,9vw,48px)}
   .opening-modal-text{font-size:16px;line-height:1.6}
   .opening-modal-btn{width:100%;min-width:0}
   .opening-modal-note{font-size:10px}

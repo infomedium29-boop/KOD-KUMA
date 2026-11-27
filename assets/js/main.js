@@ -342,10 +342,11 @@ if (orderForm) {
   }
 })();
 
-// Brendirani modal: obavijest o neradnim danima
+// Brendirani modal: privremena obavijest o drugoj smjeni 27.11.2026.
 (function () {
-  const sessionKey = 'kodKumaClosureNoticeSep2026SeenV1';
-  const noticeExpiresAt = new Date('2026-09-28T00:00:00+02:00').getTime();
+  const sessionKey = 'kodKumaClosureNoticeNov272026SeenV1';
+  const noticeStartsAt = Date.parse('2026-11-27T00:00:00+01:00');
+  const noticeExpiresAt = Date.parse('2026-11-28T00:00:00+01:00');
 
   function hasSeenNotice() {
     try {
@@ -364,13 +365,26 @@ if (orderForm) {
   }
 
   function createOpeningModal() {
-    if (Date.now() >= noticeExpiresAt || hasSeenNotice()) return;
+    if (Date.now() < noticeStartsAt || Date.now() >= noticeExpiresAt || hasSeenNotice()) return;
+
+    // Pričekaj završetak postojećeg intra, uključujući ručno preskakanje.
+    if (document.documentElement.classList.contains('kk-intro-active')) {
+      const observer = new MutationObserver(() => {
+        if (!document.documentElement.classList.contains('kk-intro-active')) {
+          observer.disconnect();
+          createOpeningModal();
+        }
+      });
+      observer.observe(document.documentElement, { attributes: true, attributeFilter: ['class'] });
+      return;
+    }
 
     const modal = document.createElement('div');
     modal.className = 'opening-modal';
     modal.setAttribute('role', 'dialog');
     modal.setAttribute('aria-modal', 'true');
     modal.setAttribute('aria-labelledby', 'opening-modal-title');
+    modal.setAttribute('aria-describedby', 'opening-modal-description');
     modal.innerHTML = `
       <div class="opening-modal-backdrop" data-opening-close></div>
       <div class="opening-modal-card">
@@ -380,8 +394,8 @@ if (orderForm) {
         <div class="opening-modal-content">
           <div class="opening-modal-logo">Kod Kuma<span>.</span></div>
           <p class="opening-modal-kicker">Važna obavijest</p>
-          <h2 id="opening-modal-title">Ne radimo 25., 26. i 27. rujna</h2>
-          <p class="opening-modal-text">Restoran Kod Kuma neće raditi u petak 25.09., subotu 26.09. i nedjelju 27.09. Hvala vam na razumijevanju.</p>
+          <h2 id="opening-modal-title">Danas ne radimo poslijepodne</h2>
+          <p class="opening-modal-text" id="opening-modal-description">Danas, u petak 27.11., restoran neće raditi u drugoj smjeni (17:00 – 21:00). Hvala vam na razumijevanju!</p>
           <button class="btn primary opening-modal-btn" type="button" data-opening-close>U redu, hvala</button>
           <span class="opening-modal-note">Kod Kuma · obavijest o radnom vremenu</span>
         </div>
@@ -390,10 +404,20 @@ if (orderForm) {
     document.body.appendChild(modal);
     document.body.classList.add('opening-modal-active');
 
+    const previousFocus = document.activeElement;
+    let closed = false;
+    let expiryTimer;
     const closeModal = () => {
+      if (closed) return;
+      closed = true;
+      window.clearTimeout(expiryTimer);
+      document.removeEventListener('keydown', handleKeydown);
+      document.removeEventListener('visibilitychange', checkExpiry);
+      window.removeEventListener('pageshow', checkExpiry);
       markNoticeAsSeen();
       modal.classList.remove('is-visible');
       document.body.classList.remove('opening-modal-active');
+      previousFocus?.focus?.({ preventScroll: true });
       window.setTimeout(() => modal.remove(), 500);
     };
 
@@ -401,18 +425,40 @@ if (orderForm) {
       button.addEventListener('click', closeModal);
     });
 
-    document.addEventListener('keydown', function handleEscape(event) {
+    function handleKeydown(event) {
       if (event.key === 'Escape') {
+        event.preventDefault();
         closeModal();
-        document.removeEventListener('keydown', handleEscape);
+      } else if (event.key === 'Tab') {
+        const buttons = [...modal.querySelectorAll('button')];
+        const first = buttons[0];
+        const last = buttons[buttons.length - 1];
+        if (event.shiftKey && (document.activeElement === first || !modal.contains(document.activeElement))) {
+          event.preventDefault();
+          last.focus();
+        } else if (!event.shiftKey && (document.activeElement === last || !modal.contains(document.activeElement))) {
+          event.preventDefault();
+          first.focus();
+        }
       }
-    });
+    }
+    function checkExpiry() {
+      if (Date.now() >= noticeExpiresAt) closeModal();
+    }
+    document.addEventListener('keydown', handleKeydown);
+    document.addEventListener('visibilitychange', checkExpiry);
+    window.addEventListener('pageshow', checkExpiry);
+    expiryTimer = window.setTimeout(checkExpiry, Math.max(0, noticeExpiresAt - Date.now()));
 
     window.requestAnimationFrame(() => {
-      window.requestAnimationFrame(() => modal.classList.add('is-visible'));
+      window.requestAnimationFrame(() => {
+        if (!closed) {
+          modal.classList.add('is-visible');
+          modal.querySelector('.opening-modal-btn')?.focus({ preventScroll: true });
+        }
+      });
     });
 
-    modal.querySelector('.opening-modal-btn')?.focus({ preventScroll: true });
   }
 
   if (document.readyState === 'loading') {
